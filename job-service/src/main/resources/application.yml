@@ -1,0 +1,29 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: job-service
+  datasource:
+    url: jdbc:h2:mem:jobdb
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+  h2:
+    console:
+      enabled: true
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+      bindings:
+        jobPosted-out-0:
+          destination: job-posted
+        jobUpdated-out-0:
+          destination: job-updated
+        jobClosed-out-0:
+          destination: job-closed

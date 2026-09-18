@@ -1,0 +1,17 @@
+com/campusgig/application/infrastructure/client/JobServiceClient.class
+com/campusgig/application/domain/event/ApplicationStatusChanged.class
+com/campusgig/application/service/ApplicationService.class
+com/campusgig/application/domain/ApplicationStatus.class
+com/campusgig/application/domain/event/ApplicationSubmitted.class
+com/campusgig/application/infrastructure/persistence/JobApplicationRepository.class
+com/campusgig/application/infrastructure/config/WebConfig.class
+com/campusgig/application/presentation/RestExceptionHandler.class
+com/campusgig/application/infrastructure/messaging/JobApplicationEventPublisher.class
+com/campusgig/application/ApplicationServiceApplication.class
+com/campusgig/application/infrastructure/client/JobServiceClient$JobSummary.class
+com/campusgig/application/domain/JobApplication.class
+com/campusgig/application/presentation/dto/ApplicationResponse.class
+com/campusgig/application/presentation/dto/ChangeStatusRequest.class
+com/campusgig/application/presentation/ApplicationController.class
+com/campusgig/application/service/NotFoundException.class
+com/campusgig/application/presentation/dto/SubmitApplicationRequest.class

@@ -1,0 +1,17 @@
+com/campusgig/job/domain/PayType.class
+com/campusgig/job/domain/event/JobClosed.class
+com/campusgig/job/presentation/dto/PostJobRequest.class
+com/campusgig/job/domain/JobStatus.class
+com/campusgig/job/domain/Job.class
+com/campusgig/job/infrastructure/config/WebConfig.class
+com/campusgig/job/service/NotFoundException.class
+com/campusgig/job/domain/event/JobPosted.class
+com/campusgig/job/service/JobService.class
+com/campusgig/job/JobServiceApplication.class
+com/campusgig/job/presentation/dto/JobResponse.class
+com/campusgig/job/presentation/RestExceptionHandler.class
+com/campusgig/job/domain/Pay.class
+com/campusgig/job/presentation/JobController.class
+com/campusgig/job/domain/event/JobUpdated.class
+com/campusgig/job/infrastructure/messaging/JobEventPublisher.class
+com/campusgig/job/infrastructure/persistence/JobRepository.class

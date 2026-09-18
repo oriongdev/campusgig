@@ -1,0 +1,45 @@
+# Kafka Streams profile: run matching-service with -Dspring.profiles.active=streams
+# (or SPRING_PROFILES_ACTIVE=streams) once the Kafka Streams dependency is approved.
+spring:
+  cloud:
+    function:
+      definition: onJobPosted;onJobUpdated;onJobClosed;onStudentProfileUpdated;onApplicationSubmitted;onApplicationStatusChanged;jobPostedStream;applicationSubmittedStream
+    stream:
+      binders:
+        kafka:
+          type: kafka
+        kstream:
+          type: kstream
+      bindings:
+        onJobPosted-in-0:
+          binder: kafka
+        onJobUpdated-in-0:
+          binder: kafka
+        onJobClosed-in-0:
+          binder: kafka
+        onStudentProfileUpdated-in-0:
+          binder: kafka
+        onApplicationSubmitted-in-0:
+          binder: kafka
+        onApplicationStatusChanged-in-0:
+          binder: kafka
+        jobPostedStream-in-0:
+          destination: job-posted
+          binder: kstream
+        applicationSubmittedStream-in-0:
+          destination: application-submitted
+          binder: kstream
+      kafka:
+        streams:
+          binder:
+            applicationId: campusgig-analytics
+            brokers: localhost:9092
+            configuration:
+              commit.interval.ms: 1000
+          bindings:
+            jobPostedStream-in-0:
+              consumer:
+                valueSerde: com.campusgig.matching.infrastructure.streams.JobPostedSerde
+            applicationSubmittedStream-in-0:
+              consumer:
+                valueSerde: com.campusgig.matching.infrastructure.streams.ApplicationSubmittedSerde

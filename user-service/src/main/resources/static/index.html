@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CampusGig</title>
+<style>
+  :root {
+    --navy: #19324d;
+    --blue: #2563eb;
+    --teal: #0891b2;
+    --green: #10b981;
+    --amber: #f59e0b;
+    --red: #dc2626;
+    --bg: #f5f8fc;
+    --card: #ffffff;
+    --border: #d9e2ec;
+    --body: #4b5563;
+    --muted: #64748b;
+    --radius: 12px;
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--body); font-family: var(--font); font-size: 15px; line-height: 1.5; }
+  header { background: var(--navy); color: #fff; padding: 14px 24px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+  .brand { font-size: 22px; font-weight: 700; letter-spacing: -0.3px; }
+  .brand span { color: #7dd3fc; font-weight: 400; font-size: 14px; margin-left: 8px; }
+  .status { display: flex; gap: 12px; margin-left: auto; flex-wrap: wrap; }
+  .status div { font-size: 12px; color: #bfd3e6; display: flex; align-items: center; gap: 5px; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; background: #64748b; }
+  .dot.up { background: var(--green); }
+  .dot.down { background: var(--red); }
+  nav { background: #fff; border-bottom: 1px solid var(--border); padding: 0 24px; display: flex; gap: 4px; }
+  nav button { background: none; border: none; border-bottom: 3px solid transparent; padding: 14px 18px; font: inherit; font-weight: 600; color: var(--muted); cursor: pointer; }
+  nav button.active { color: var(--navy); border-bottom-color: var(--blue); }
+  main { padding: 24px; max-width: 1400px; margin: 0 auto; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 18px; align-items: start; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; }
+  .card h2 { margin: 0 0 4px; font-size: 17px; color: var(--navy); }
+  .card p.hint { margin: 0 0 14px; font-size: 13px; color: var(--muted); }
+  label { display: block; font-size: 13px; font-weight: 600; color: var(--navy); margin: 10px 0 4px; }
+  input, select, textarea { width: 100%; padding: 9px 11px; border: 1px solid var(--border); border-radius: 8px; font: inherit; background: #fff; color: var(--body); }
+  textarea { min-height: 70px; resize: vertical; }
+  button.btn { background: var(--blue); color: #fff; border: none; border-radius: 8px; padding: 9px 16px; font: inherit; font-weight: 600; cursor: pointer; }
+  button.btn:hover { filter: brightness(1.08); }
+  button.btn.ghost { background: #fff; color: var(--navy); border: 1px solid var(--border); }
+  button.btn.teal { background: var(--teal); }
+  button.btn.green { background: var(--green); }
+  button.btn.amber { background: var(--amber); }
+  button.btn.red { background: var(--red); }
+  button.btn.sm { padding: 6px 11px; font-size: 13px; }
+  .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .row > * { flex: 1 1 140px; }
+  .row .fixed { flex: 0 0 auto; }
+  .list { display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
+  .item { border: 1px solid var(--border); border-radius: 10px; padding: 12px; background: #fff; }
+  .item h3 { margin: 0 0 3px; font-size: 15px; color: var(--navy); }
+  .item .meta { font-size: 12.5px; color: var(--muted); }
+  .item .body { font-size: 13.5px; margin: 7px 0; }
+  .pill { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 11.5px; font-weight: 700; }
+  .pill.blue { background: #dbeafe; color: #1d4ed8; }
+  .pill.teal { background: #dff7f2; color: #0e7490; }
+  .pill.green { background: #d1fae5; color: #047857; }
+  .pill.amber { background: #fef3c7; color: #b45309; }
+  .pill.grey { background: #eef2f7; color: #475569; }
+  .pill.red { background: #fee2e2; color: #b91c1c; }
+  .empty { color: var(--muted); font-size: 13.5px; padding: 14px 0; }
+  .bar-row { margin-bottom: 12px; }
+  .bar-row .bar-label { display: flex; justify-content: space-between; font-size: 13.5px; margin-bottom: 4px; }
+  .bar-row .bar-label b { color: var(--navy); }
+  .bar { height: 10px; background: #eef2f7; border-radius: 999px; overflow: hidden; }
+  .bar i { display: block; height: 100%; background: var(--teal); border-radius: 999px; }
+  .bar.blue i { background: var(--blue); }
+  #toasts { position: fixed; right: 18px; bottom: 18px; display: flex; flex-direction: column; gap: 8px; z-index: 50; }
+  .toast { background: var(--navy); color: #fff; padding: 11px 15px; border-radius: 9px; font-size: 13.5px; max-width: 340px; box-shadow: 0 6px 18px rgba(0,0,0,.18); }
+  .toast.error { background: var(--red); }
+  .toast.ok { background: var(--green); }
+  .who { background: #eef4fb; border: 1px solid var(--border); border-radius: 10px; padding: 12px; }
+  .score { font-weight: 700; color: var(--teal); }
+  footer { text-align: center; color: var(--muted); font-size: 12px; padding: 20px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">CampusGig <span>Student Job &amp; Gig Board</span></div>
+  <div class="status" id="status"></div>
+</header>
+
+<nav>
+  <button data-tab="student" class="active">Student</button>
+  <button data-tab="employer">Employer</button>
+  <button data-tab="analytics">Live analytics</button>
+</nav>
+
+<main>
+  <!-- ============ STUDENT ============ -->
+  <section id="tab-student">
+    <div class="grid">
+
+      <div class="card">
+        <h2>Who are you?</h2>
+        <p class="hint">Pick an existing student, or register a new one.</p>
+        <div class="who">
+          <div class="row">
+            <select id="studentPicker"></select>
+            <button class="btn ghost fixed sm" id="refreshStudents">Refresh</button>
+          </div>
+        </div>
+        <label for="sName">Name</label>
+        <input id="sName" placeholder="Alex Nguyen">
+        <label for="sEmail">Email</label>
+        <input id="sEmail" placeholder="alex@uowmail.edu.au">
+        <label for="sSkills">Skills (comma separated)</label>
+        <input id="sSkills" placeholder="barista, customer service, java">
+        <label for="sAvail">Availability</label>
+        <select id="sAvail">
+          <option>WEEKDAYS</option><option>WEEKENDS</option><option>EVENINGS</option><option selected>FLEXIBLE</option>
+        </select>
+        <div class="row" style="margin-top:14px">
+          <button class="btn" id="registerStudent">Register student</button>
+          <button class="btn ghost" id="updateProfile">Update my profile</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Find jobs</h2>
+        <p class="hint">Only open jobs are listed.</p>
+        <div class="row">
+          <input id="fCategory" placeholder="Category e.g. hospitality">
+          <input id="fLocation" placeholder="Location e.g. Wollongong">
+          <input id="fMinPay" type="number" placeholder="Min pay">
+        </div>
+        <div class="row" style="margin-top:12px">
+          <button class="btn teal" id="searchJobs">Search</button>
+          <button class="btn ghost" id="clearFilters">Clear</button>
+        </div>
+        <div class="list" id="jobResults"><div class="empty">Search to see jobs.</div></div>
+      </div>
+
+      <div class="card">
+        <h2>Recommended for you</h2>
+        <p class="hint">Built by matching-service from Kafka events. Rule-based for now; the AI agent replaces this.</p>
+        <div class="row">
+          <button class="btn ghost sm fixed" id="loadRecs">Rule-based</button>
+          <button class="btn teal sm fixed" id="loadAiRecs">Ask the AI agent</button>
+        </div>
+        <div class="list" id="recs"><div class="empty">Pick a student first.</div></div>
+      </div>
+
+      <div class="card">
+        <h2>My applications</h2>
+        <p class="hint">Status changes are published as events.</p>
+        <button class="btn ghost sm" id="loadApps">Refresh</button>
+        <div class="list" id="myApps"><div class="empty">Pick a student first.</div></div>
+      </div>
+
+      <div class="card">
+        <h2>Notifications</h2>
+        <p class="hint">Created by matching-service when your application status changes.</p>
+        <button class="btn ghost sm" id="loadNotifs">Refresh</button>
+        <div class="list" id="notifs"><div class="empty">Pick a student first.</div></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ EMPLOYER ============ -->
+  <section id="tab-employer" hidden>
+    <div class="grid">
+
+      <div class="card">
+        <h2>Who are you?</h2>
+        <p class="hint">Pick an existing employer, or register a new one.</p>
+        <div class="who">
+          <div class="row">
+            <select id="employerPicker"></select>
+            <button class="btn ghost fixed sm" id="refreshEmployers">Refresh</button>
+          </div>
+        </div>
+        <label for="eName">Company name</label>
+        <input id="eName" placeholder="Northbeach Cafe">
+        <label for="eEmail">Email</label>
+        <input id="eEmail" placeholder="jobs@northbeachcafe.com.au">
+        <div class="row" style="margin-top:14px">
+          <button class="btn" id="registerEmployer">Register employer</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Post a job</h2>
+        <p class="hint">Publishes a JobPosted event to Kafka.</p>
+        <label for="jTitle">Title</label>
+        <input id="jTitle" placeholder="Weekend Barista">
+        <label for="jDesc">Description</label>
+        <textarea id="jDesc" placeholder="Make coffee and handle customer service on Saturday mornings."></textarea>
+        <div class="row">
+          <div>
+            <label for="jCategory">Category</label>
+            <input id="jCategory" placeholder="hospitality">
+          </div>
+          <div>
+            <label for="jLocation">Location</label>
+            <input id="jLocation" placeholder="Wollongong">
+          </div>
+        </div>
+        <div class="row">
+          <div>
+            <label for="jPay">Pay</label>
+            <input id="jPay" type="number" step="0.01" placeholder="28.50">
+          </div>
+          <div>
+            <label for="jPayType">Pay type</label>
+            <select id="jPayType"><option>HOURLY</option><option>FIXED</option></select>
+          </div>
+        </div>
+        <div class="row" style="margin-top:14px">
+          <button class="btn" id="postJob">Post job</button>
+          <button class="btn teal" id="improveAd">Improve with AI</button>
+        </div>
+        <div id="adTips"></div>
+      </div>
+
+      <div class="card">
+        <h2>My jobs and applicants</h2>
+        <p class="hint">Shortlist, accept or reject applicants, or close a job.</p>
+        <button class="btn ghost sm" id="loadMyJobs">Refresh</button>
+        <div class="list" id="myJobs"><div class="empty">Pick an employer first.</div></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ ANALYTICS ============ -->
+  <section id="tab-analytics" hidden>
+    <div class="grid">
+      <div class="card">
+        <h2>Jobs per category</h2>
+        <p class="hint">Counted from JobPosted events as they arrive.</p>
+        <div id="jobsPerCategory"><div class="empty">No events yet.</div></div>
+      </div>
+      <div class="card">
+        <h2>Applications per job</h2>
+        <p class="hint">Counted from ApplicationSubmitted events as they arrive.</p>
+        <div id="appsPerJob"><div class="empty">No events yet.</div></div>
+      </div>
+      <div class="card">
+        <h2>Trending jobs</h2>
+        <p class="hint">Jobs with 2 or more applications in the last 15 minutes.</p>
+        <div id="trending"><div class="empty">Nothing trending yet.</div></div>
+      </div>
+      <div class="card">
+        <h2>Demo data</h2>
+        <p class="hint">Creates a student, an employer and two jobs so you have something to click through.</p>
+        <button class="btn green" id="seed">Create demo data</button>
+        <p class="hint" style="margin-top:14px">Auto-refresh keeps these counts updating every 5 seconds while this tab is open.</p>
+        <p class="hint">Counts come from: <b id="analyticsSource">checking...</b></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>CampusGig &middot; CSCI318 group project &middot; user-service :8081 &middot; job-service :8082 &middot; application-service :8083 &middot; matching-service :8084</footer>
+<div id="toasts"></div>
+
+<script>
+const API = {
+  user: "http://localhost:8081",
+  job: "http://localhost:8082",
+  app: "http://localhost:8083",
+  match: "http://localhost:8084"
+};
+
+const state = {
+  studentId: localStorage.getItem("cg.studentId") || "",
+  employerId: localStorage.getItem("cg.employerId") || "",
+  timer: null
+};
+
+/* ---------- helpers ---------- */
+function $(id) { return document.getElementById(id); }
+
+function toast(message, kind) {
+  const el = document.createElement("div");
+  el.className = "toast" + (kind ? " " + kind : "");
+  el.textContent = message;
+  $("toasts").appendChild(el);
+  setTimeout(function () { el.remove(); }, 4000);
+}
+
+async function api(base, path, options) {
+  options = options || {};
+  const init = { method: options.method || "GET", headers: { "Content-Type": "application/json" } };
+  if (options.body !== undefined) init.body = JSON.stringify(options.body);
+  let res;
+  try {
+    res = await fetch(base + path, init);
+  } catch (e) {
+    throw new Error("Can't reach " + base + ". Is that service running?");
+  }
+  const text = await res.text();
+  let data = null;
+  if (text) { try { data = JSON.parse(text); } catch (e) { data = text; } }
+  if (!res.ok) {
+    const detail = data && data.detail ? data.detail : res.status + " " + res.statusText;
+    throw new Error(detail);
+  }
+  return data;
+}
+
+function esc(value) {
+  return String(value === null || value === undefined ? "" : value)
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+
+function statusPill(status) {
+  const map = { SUBMITTED: "blue", SHORTLISTED: "amber", ACCEPTED: "green", REJECTED: "red", WITHDRAWN: "grey", OPEN: "green", CLOSED: "grey" };
+  return '<span class="pill ' + (map[status] || "grey") + '">' + esc(status) + "</span>";
+}
+
+function pay(job) {
+  return "$" + Number(job.payAmount).toFixed(2) + (job.payType === "HOURLY" ? " /hr" : " fixed");
+}
+
+function when(iso) {
+  if (!iso) return "";
+  const d = new Date(iso);
+  return d.toLocaleString();
+}
+
+/* ---------- service status ---------- */
+const CHECKS = [
+  ["user-service", API.user, "/api/students"],
+  ["job-service", API.job, "/api/jobs"],
+  ["application-service", API.app, "/api/applications?jobId=0"],
+  ["matching-service", API.match, "/api/analytics/jobs-per-category"]
+];
+
+async function checkStatus() {
+  $("status").innerHTML = CHECKS.map(function (c, i) {
+    return '<div><span class="dot" id="dot' + i + '"></span>' + c[0] + "</div>";
+  }).join("");
+  CHECKS.forEach(async function (c, i) {
+    try {
+      await api(c[1], c[2]);
+      $("dot" + i).className = "dot up";
+    } catch (e) {
+      $("dot" + i).className = "dot down";
+    }
+  });
+}
+
+/* ---------- tabs ---------- */
+document.querySelectorAll("nav button").forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    document.querySelectorAll("nav button").forEach(function (b) { b.classList.remove("active"); });
+    btn.classList.add("active");
+    ["student", "employer", "analytics"].forEach(function (name) {
+      $("tab-" + name).hidden = name !== btn.dataset.tab;
+    });
+    clearInterval(state.timer);
+    if (btn.dataset.tab === "analytics") {
+      loadAnalytics();
+      state.timer = setInterval(loadAnalytics, 5000);
+    }
+  });
+});
+
+/* ---------- students ---------- */
+async function loadStudents() {
+  try {
+    const students = await api(API.user, "/api/students");
+    const picker = $("studentPicker");
+    picker.innerHTML = '<option value="">-- choose a student --</option>' + students.map(function (s) {
+      return '<option value="' + s.id + '">' + esc(s.name) + " (#" + s.id + ")</option>";
+    }).join("");
+    picker.value = state.studentId;
+    if (picker.value) fillStudentForm(students.find(function (s) { return String(s.id) === String(state.studentId); }));
+  } catch (e) { toast(e.message, "error"); }
+}
+
+function fillStudentForm(student) {
+  if (!student) return;
+  $("sName").value = student.name;
+  $("sEmail").value = student.email;
+  $("sSkills").value = (student.skills || []).join(", ");
+  $("sAvail").value = student.availability;
+}
+
+function skillList() {
+  return $("sSkills").value.split(",").map(function (s) { return s.trim(); }).filter(Boolean);
+}
+
+$("studentPicker").addEventListener("change", async function (e) {
+  state.studentId = e.target.value;
+  localStorage.setItem("cg.studentId", state.studentId);
+  if (!state.studentId) return;
+  try {
+    fillStudentForm(await api(API.user, "/api/students/" + state.studentId));
+    loadStudentPanels();
+  } catch (err) { toast(err.message, "error"); }
+});
+
+$("refreshStudents").addEventListener("click", loadStudents);
+
+$("registerStudent").addEventListener("click", async function () {
+  try {
+    const student = await api(API.user, "/api/students", {
+      method: "POST",
+      body: { name: $("sName").value, email: $("sEmail").value, skills: skillList(), availability: $("sAvail").value }
+    });
+    state.studentId = String(student.id);
+    localStorage.setItem("cg.studentId", state.studentId);
+    toast("Registered " + student.name + " (#" + student.id + ")", "ok");
+    await loadStudents();
+    loadStudentPanels();
+  } catch (e) { toast(e.message, "error"); }
+});
+
+$("updateProfile").addEventListener("click", async function () {
+  if (!state.studentId) return toast("Pick a student first", "error");
+  try {
+    await api(API.user, "/api/students/" + state.studentId + "/profile", {
+      method: "PUT",
+      body: { skills: skillList(), availability: $("sAvail").value }
+    });
+    toast("Profile updated. StudentProfileUpdated event published.", "ok");
+    loadRecommendations();
+  } catch (e) { toast(e.message, "error"); }
+});
+
+/* ---------- jobs ---------- */
+async function searchJobs() {
+  const params = new URLSearchParams();
+  if ($("fCategory").value.trim()) params.set("category", $("fCategory").value.trim());
+  if ($("fLocation").value.trim()) params.set("location", $("fLocation").value.trim());
+  if ($("fMinPay").value) params.set("minPay", $("fMinPay").value);
+  const query = params.toString();
+  try {
+    const jobs = await api(API.job, "/api/jobs" + (query ? "?" + query : ""));
+    $("jobResults").innerHTML = jobs.length ? jobs.map(function (j) {
+      return '<div class="item">' +
+        "<h3>" + esc(j.title) + "</h3>" +
+        '<div class="meta">' + esc(j.category) + " &middot; " + esc(j.location) + " &middot; " + pay(j) + " &middot; job #" + j.id + "</div>" +
+        '<div class="body">' + esc(j.description) + "</div>" +
+        '<textarea id="cover' + j.id + '" placeholder="Why you\'re a good fit"></textarea>' +
+        '<div class="row" style="margin-top:8px"><button class="btn sm fixed" data-apply="' + j.id + '">Apply</button></div>' +
+        "</div>";
+    }).join("") : '<div class="empty">No open jobs match those filters.</div>';
+    document.querySelectorAll("[data-apply]").forEach(function (btn) {
+      btn.addEventListener("click", function () { apply(btn.dataset.apply); });
+    });
+  } catch (e) { toast(e.message, "error"); }
+}
+
+$("searchJobs").addEventListener("click", searchJobs);
+$("clearFilters").addEventListener("click", function () {
+  $("fCategory").value = ""; $("fLocation").value = ""; $("fMinPay").value = "";
+  searchJobs();
+});
+
+async function apply(jobId) {
+  if (!state.studentId) return toast("Pick a student first", "error");
+  try {
+    await api(API.app, "/api/applications", {
+      method: "POST",
+      body: { jobId: Number(jobId), studentId: Number(state.studentId), coverMessage: ($("cover" + jobId) || {}).value || "" }
+    });
+    toast("Applied for job #" + jobId, "ok");
+    loadMyApplications();
+  } catch (e) { toast(e.message, "error"); }
+}
+
+/* ---------- student panels ---------- */
+async function loadRecommendations() {
+  if (!state.studentId) return;
+  try {
+    const recs = await api(API.match, "/api/matching/students/" + state.studentId + "/recommendations");
+    $("recs").innerHTML = recs.length ? recs.map(function (r) {
+      return '<div class="item"><h3>' + esc(r.title) + "</h3>" +
+        '<div class="meta">' + esc(r.category) + " &middot; job #" + r.jobId + '</div>' +
+        '<div class="body"><span class="score">' + Math.round(r.score * 100) + "% match</span> &middot; " + esc(r.reason) + "</div></div>";
+    }).join("") : '<div class="empty">No matches yet. Add skills that appear in job titles or categories.</div>';
+  } catch (e) {
+    $("recs").innerHTML = '<div class="empty">' + esc(e.message) + "</div>";
+  }
+}
+
+async function loadMyApplications() {
+  if (!state.studentId) return;
+  try {
+    const apps = await api(API.app, "/api/applications?studentId=" + state.studentId);
+    $("myApps").innerHTML = apps.length ? apps.map(function (a) {
+      const canWithdraw = a.status === "SUBMITTED" || a.status === "SHORTLISTED";
+      return '<div class="item"><h3>Application #' + a.id + " &middot; job #" + a.jobId + "</h3>" +
+        '<div class="meta">Submitted ' + when(a.submittedAt) + "</div>" +
+        '<div class="body">' + statusPill(a.status) + "</div>" +
+        (canWithdraw ? '<button class="btn ghost sm" data-withdraw="' + a.id + '">Withdraw</button>' : "") +
+        "</div>";
+    }).join("") : '<div class="empty">No applications yet.</div>';
+    document.querySelectorAll("[data-withdraw]").forEach(function (btn) {
+      btn.addEventListener("click", async function () {
+        try {
+          await api(API.app, "/api/applications/" + btn.dataset.withdraw + "/withdraw", { method: "POST" });
+          toast("Application withdrawn", "ok");
+          loadMyApplications();
+        } catch (e) { toast(e.message, "error"); }
+      });
+    });
+  } catch (e) { toast(e.message, "error"); }
+}
+
+async function loadNotifications() {
+  if (!state.studentId) return;
+  try {
+    const items = await api(API.match, "/api/notifications/students/" + state.studentId);
+    $("notifs").innerHTML = items.length ? items.map(function (n) {
+      return '<div class="item"><div class="body">' + esc(n.message) + '</div><div class="meta">' + when(n.createdAt) + "</div></div>";
+    }).join("") : '<div class="empty">No notifications yet.</div>';
+  } catch (e) { toast(e.message, "error"); }
+}
+
+function loadStudentPanels() {
+  loadRecommendations();
+  loadMyApplications();
+  loadNotifications();
+}
+
+$("loadRecs").addEventListener("click", loadRecommendations);
+$("loadApps").addEventListener("click", loadMyApplications);
+$("loadNotifs").addEventListener("click", loadNotifications);
+
+/* ---------- employers ---------- */
+async function loadEmployers() {
+  try {
+    const employers = await api(API.user, "/api/employers");
+    const picker = $("employerPicker");
+    picker.innerHTML = '<option value="">-- choose an employer --</option>' + employers.map(function (e) {
+      return '<option value="' + e.id + '">' + esc(e.companyName) + " (#" + e.id + ")</option>";
+    }).join("");
+    picker.value = state.employerId;
+  } catch (e) { toast(e.message, "error"); }
+}
+
+$("employerPicker").addEventListener("change", function (e) {
+  state.employerId = e.target.value;
+  localStorage.setItem("cg.employerId", state.employerId);
+  loadMyJobs();
+});
+
+$("refreshEmployers").addEventListener("click", loadEmployers);
+
+$("registerEmployer").addEventListener("click", async function () {
+  try {
+    const employer = await api(API.user, "/api/employers", {
+      method: "POST",
+      body: { companyName: $("eName").value, email: $("eEmail").value }
+    });
+    state.employerId = String(employer.id);
+    localStorage.setItem("cg.employerId", state.employerId);
+    toast("Registered " + employer.companyName + " (#" + employer.id + ")", "ok");
+    loadEmployers();
+  } catch (e) { toast(e.message, "error"); }
+});
+
+$("postJob").addEventListener("click", async function () {
+  if (!state.employerId) return toast("Pick an employer first", "error");
+  try {
+    const job = await api(API.job, "/api/jobs", {
+      method: "POST",
+      body: {
+        employerId: Number(state.employerId),
+        title: $("jTitle").value,
+        description: $("jDesc").value,
+        category: $("jCategory").value,
+        location: $("jLocation").value,
+        payAmount: Number($("jPay").value),
+        payType: $("jPayType").value
+      }
+    });
+    toast("Posted job #" + job.id + ". JobPosted event published.", "ok");
+    $("jTitle").value = ""; $("jDesc").value = "";
+    loadMyJobs();
+  } catch (e) { toast(e.message, "error"); }
+});
+
+async function loadMyJobs() {
+  if (!state.employerId) return;
+  try {
+    const jobs = await api(API.job, "/api/jobs/employer/" + state.employerId);
+    if (!jobs.length) { $("myJobs").innerHTML = '<div class="empty">No jobs posted yet.</div>'; return; }
+    const blocks = await Promise.all(jobs.map(async function (j) {
+      let apps = [];
+      try { apps = await api(API.app, "/api/applications?jobId=" + j.id); } catch (e) { apps = []; }
+      const rows = apps.length ? apps.map(function (a) {
+        const open = a.status === "SUBMITTED" || a.status === "SHORTLISTED";
+        return '<div class="item" style="margin-top:8px">' +
+          "<h3>Student #" + a.studentId + " &middot; application #" + a.id + "</h3>" +
+          '<div class="body">' + statusPill(a.status) + (a.coverMessage ? " &middot; " + esc(a.coverMessage) : "") + "</div>" +
+          (open ? '<div class="row">' +
+            (a.status === "SUBMITTED" ? '<button class="btn amber sm fixed" data-status="SHORTLISTED" data-id="' + a.id + '">Shortlist</button>' : "") +
+            '<button class="btn green sm fixed" data-status="ACCEPTED" data-id="' + a.id + '">Accept</button>' +
+            '<button class="btn red sm fixed" data-status="REJECTED" data-id="' + a.id + '">Reject</button>' +
+            "</div>" : "") +
+          "</div>";
+      }).join("") : '<div class="empty">No applicants yet.</div>';
+      return '<div class="item"><h3>' + esc(j.title) + " " + statusPill(j.status) + "</h3>" +
+        '<div class="meta">' + esc(j.category) + " &middot; " + esc(j.location) + " &middot; " + pay(j) + " &middot; job #" + j.id + "</div>" +
+        (j.status === "OPEN" ? '<div class="row" style="margin:8px 0">' +
+          '<button class="btn ghost sm fixed" data-edit="' + j.id + '">Edit</button>' +
+          '<button class="btn ghost sm fixed" data-close="' + j.id + '">Close job</button></div>' +
+          '<div id="editBox' + j.id + '" hidden>' +
+            '<label>Title</label><input id="editTitle' + j.id + '" value="' + esc(j.title) + '">' +
+            '<label>Description</label><textarea id="editDesc' + j.id + '">' + esc(j.description) + '</textarea>' +
+            '<div class="row"><div><label>Pay</label><input type="number" step="0.01" id="editPay' + j.id + '" value="' + j.payAmount + '"></div>' +
+            '<div><label>Category</label><input id="editCat' + j.id + '" value="' + esc(j.category) + '"></div>' +
+            '<div><label>Location</label><input id="editLoc' + j.id + '" value="' + esc(j.location) + '"></div></div>' +
+            '<div class="row" style="margin-top:10px"><button class="btn sm fixed" data-save="' + j.id + '">Save changes</button></div>' +
+          "</div>" : "") +
+        rows + "</div>";
+    }));
+    $("myJobs").innerHTML = blocks.join("");
+    document.querySelectorAll("[data-status]").forEach(function (btn) {
+      btn.addEventListener("click", async function () {
+        try {
+          await api(API.app, "/api/applications/" + btn.dataset.id + "/status", { method: "PUT", body: { status: btn.dataset.status } });
+          toast("Application #" + btn.dataset.id + " is now " + btn.dataset.status, "ok");
+          loadMyJobs();
+        } catch (e) { toast(e.message, "error"); }
+      });
+    });
+    document.querySelectorAll("[data-edit]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        const box = $("editBox" + btn.dataset.edit);
+        box.hidden = !box.hidden;
+      });
+    });
+    document.querySelectorAll("[data-save]").forEach(function (btn) {
+      btn.addEventListener("click", async function () {
+        const id = btn.dataset.save;
+        try {
+          await api(API.job, "/api/jobs/" + id, {
+            method: "PUT",
+            body: {
+              employerId: Number(state.employerId),
+              title: $("editTitle" + id).value,
+              description: $("editDesc" + id).value,
+              category: $("editCat" + id).value,
+              location: $("editLoc" + id).value,
+              payAmount: Number($("editPay" + id).value),
+              payType: "HOURLY"
+            }
+          });
+          toast("Job #" + id + " updated. JobUpdated event published.", "ok");
+          loadMyJobs();
+        } catch (e) { toast(e.message, "error"); }
+      });
+    });
+    document.querySelectorAll("[data-close]").forEach(function (btn) {
+      btn.addEventListener("click", async function () {
+        try {
+          await api(API.job, "/api/jobs/" + btn.dataset.close + "/close", { method: "POST" });
+          toast("Job #" + btn.dataset.close + " closed. JobClosed event published.", "ok");
+          loadMyJobs();
+        } catch (e) { toast(e.message, "error"); }
+      });
+    });
+  } catch (e) { toast(e.message, "error"); }
+}
+
+$("loadMyJobs").addEventListener("click", loadMyJobs);
+
+/* ---------- analytics ---------- */
+function bars(data, cssClass) {
+  const entries = Object.keys(data).map(function (k) { return [k, data[k]]; });
+  if (!entries.length) return '<div class="empty">No events yet.</div>';
+  const max = Math.max.apply(null, entries.map(function (e) { return e[1]; }));
+  return entries.map(function (e) {
+    return '<div class="bar-row"><div class="bar-label"><span>' + esc(e[0]) + "</span><b>" + e[1] + '</b></div>' +
+      '<div class="bar ' + cssClass + '"><i style="width:' + Math.round((e[1] / max) * 100) + '%"></i></div></div>';
+  }).join("");
+}
+
+async function loadAnalytics() {
+  try {
+    const perCategory = await api(API.match, "/api/analytics/jobs-per-category");
+    $("jobsPerCategory").innerHTML = bars(perCategory, "");
+    const trending = await api(API.match, "/api/analytics/trending-jobs");
+    $("trending").innerHTML = trending.length ? trending.map(function (t) {
+      return '<div class="item"><h3>' + esc(t.title) + ' <span class="pill amber">trending</span></h3>' +
+        '<div class="meta">job #' + t.jobId + " &middot; " + t.applicationsInWindow + " applications in the last 15 minutes</div></div>";
+    }).join("") : '<div class="empty">Nothing trending yet.</div>';
+    try {
+      const src = await api(API.match, "/api/analytics/source");
+      $("analyticsSource").textContent = src.source;
+    } catch (e) { $("analyticsSource").textContent = "unknown"; }
+    const perJob = await api(API.match, "/api/analytics/applications-per-job");
+    const labelled = {};
+    Object.keys(perJob).forEach(function (k) { labelled["job #" + k] = perJob[k]; });
+    $("appsPerJob").innerHTML = bars(labelled, "blue");
+  } catch (e) {
+    $("jobsPerCategory").innerHTML = '<div class="empty">' + esc(e.message) + "</div>";
+  }
+}
+
+/* ---------- AI agents ---------- */
+async function aiEnabled() {
+  try {
+    const s = await api(API.match, "/api/ai/status");
+    return !!(s && s.enabled);
+  } catch (e) { return false; }
+}
+
+async function loadAiRecommendations() {
+  if (!state.studentId) return toast("Pick a student first", "error");
+  $("recs").innerHTML = '<div class="empty">Asking the AI agent. This takes a few seconds...</div>';
+  try {
+    const recs = await api(API.match, "/api/ai/students/" + state.studentId + "/recommendations");
+    $("recs").innerHTML = recs.length ? recs.map(function (r) {
+      return '<div class="item"><h3>' + esc(r.title) + ' <span class="pill teal">AI</span></h3>' +
+        '<div class="meta">job #' + r.jobId + "</div>" +
+        '<div class="body"><span class="score">' + Math.round((r.score || 0) * 100) + "% match</span> &middot; " + esc(r.reason) + "</div></div>";
+    }).join("") : '<div class="empty">The agent found no good matches.</div>';
+  } catch (e) {
+    $("recs").innerHTML = '<div class="empty">' + esc(e.message) + "</div>";
+  }
+}
+
+async function improveJobAd() {
+  $("adTips").innerHTML = '<div class="empty">Asking the AI assistant...</div>';
+  try {
+    const review = await api(API.match, "/api/ai/job-ad/review", {
+      method: "POST",
+      body: {
+        title: $("jTitle").value,
+        category: $("jCategory").value,
+        location: $("jLocation").value,
+        pay: $("jPay").value + " " + $("jPayType").value,
+        description: $("jDesc").value
+      }
+    });
+    $("jTitle").value = review.improvedTitle || $("jTitle").value;
+    $("jDesc").value = review.improvedDescription || $("jDesc").value;
+    const tips = (review.tips || []).map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("");
+    $("adTips").innerHTML = '<div class="item" style="margin-top:12px"><h3>What the assistant changed <span class="pill teal">AI</span></h3>' +
+      (tips ? '<ul style="margin:8px 0 0 18px;padding:0;font-size:13.5px">' + tips + "</ul>" : '<div class="body">Ad rewritten above.</div>') + "</div>";
+    toast("Job ad improved. Check the title and description before posting.", "ok");
+  } catch (e) {
+    $("adTips").innerHTML = '<div class="item" style="margin-top:12px"><div class="body">' + esc(e.message) + "</div></div>";
+  }
+}
+
+$("loadAiRecs").addEventListener("click", loadAiRecommendations);
+$("improveAd").addEventListener("click", improveJobAd);
+
+/* ---------- demo data ---------- */
+$("seed").addEventListener("click", async function () {
+  const tag = Date.now().toString().slice(-6);
+  try {
+    const student = await api(API.user, "/api/students", {
+      method: "POST",
+      body: { name: "Alex Nguyen", email: "alex" + tag + "@uowmail.edu.au", skills: ["barista", "customer service", "java"], availability: "WEEKENDS" }
+    });
+    const employer = await api(API.user, "/api/employers", {
+      method: "POST",
+      body: { companyName: "Northbeach Cafe", email: "jobs" + tag + "@northbeachcafe.com.au" }
+    });
+    await api(API.job, "/api/jobs", {
+      method: "POST",
+      body: { employerId: employer.id, title: "Weekend Barista", description: "Make coffee and handle customer service on Saturday mornings.", category: "hospitality", location: "Wollongong", payAmount: 28.5, payType: "HOURLY" }
+    });
+    await api(API.job, "/api/jobs", {
+      method: "POST",
+      body: { employerId: employer.id, title: "Java Tutor", description: "Help first-year students with Java basics.", category: "tutoring", location: "Wollongong", payAmount: 35, payType: "HOURLY" }
+    });
+    state.studentId = String(student.id);
+    state.employerId = String(employer.id);
+    localStorage.setItem("cg.studentId", state.studentId);
+    localStorage.setItem("cg.employerId", state.employerId);
+    toast("Demo data created. Student #" + student.id + ", employer #" + employer.id, "ok");
+    await loadStudents();
+    await loadEmployers();
+    loadStudentPanels();
+    loadAnalytics();
+  } catch (e) { toast(e.message, "error"); }
+});
+
+/* ---------- start ---------- */
+checkStatus();
+aiEnabled().then(function (on) {
+  if (on) return;
+  ["loadAiRecs", "improveAd"].forEach(function (id) {
+    const btn = $(id);
+    btn.disabled = true;
+    btn.style.opacity = "0.5";
+    btn.title = "Set GEMINI_API_KEY and restart matching-service to enable the AI agents";
+  });
+});
+loadStudents();
+loadEmployers();
+searchJobs();
+if (state.studentId) loadStudentPanels();
+if (state.employerId) loadMyJobs();
+setInterval(checkStatus, 15000);
+</script>
+</body>
+</html>

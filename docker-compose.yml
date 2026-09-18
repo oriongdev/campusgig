@@ -1,0 +1,8 @@
+# Single-node Kafka (KRaft mode, no ZooKeeper) for local development.
+# Start with: docker compose up -d
+services:
+  kafka:
+    image: apache/kafka:3.9.1
+    container_name: campusgig-kafka
+    ports:
+      - "9092:9092"

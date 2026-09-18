@@ -1,0 +1,540 @@
+{
+  "info": {
+    "name": "CampusGig demo",
+    "description": "Run in order against a fresh start of all four services.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "userUrl",
+      "value": "http://localhost:8081"
+    },
+    {
+      "key": "jobUrl",
+      "value": "http://localhost:8082"
+    },
+    {
+      "key": "appUrl",
+      "value": "http://localhost:8083"
+    },
+    {
+      "key": "matchUrl",
+      "value": "http://localhost:8084"
+    }
+  ],
+  "item": [
+    {
+      "name": "1. Register student",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{userUrl}}/api/students",
+          "host": [
+            "{{userUrl}}"
+          ],
+          "path": [
+            "api",
+            "students"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Alex Nguyen\",\n  \"email\": \"alex@uowmail.edu.au\",\n  \"skills\": [\n    \"barista\",\n    \"customer service\",\n    \"java\"\n  ],\n  \"availability\": \"WEEKENDS\"\n}"
+        }
+      }
+    },
+    {
+      "name": "2. Register employer",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{userUrl}}/api/employers",
+          "host": [
+            "{{userUrl}}"
+          ],
+          "path": [
+            "api",
+            "employers"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"companyName\": \"Northbeach Cafe\",\n  \"email\": \"jobs@northbeachcafe.com.au\"\n}"
+        }
+      }
+    },
+    {
+      "name": "3. Post job (hospitality)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{jobUrl}}/api/jobs",
+          "host": [
+            "{{jobUrl}}"
+          ],
+          "path": [
+            "api",
+            "jobs"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"employerId\": 1,\n  \"title\": \"Weekend Barista\",\n  \"description\": \"Make coffee and handle customer service on Saturday mornings.\",\n  \"category\": \"hospitality\",\n  \"location\": \"Wollongong\",\n  \"payAmount\": 28.5,\n  \"payType\": \"HOURLY\"\n}"
+        }
+      }
+    },
+    {
+      "name": "4. Post job (IT)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{jobUrl}}/api/jobs",
+          "host": [
+            "{{jobUrl}}"
+          ],
+          "path": [
+            "api",
+            "jobs"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"employerId\": 1,\n  \"title\": \"Java Tutor\",\n  \"description\": \"Help first-year students with Java basics.\",\n  \"category\": \"tutoring\",\n  \"location\": \"Wollongong\",\n  \"payAmount\": 35,\n  \"payType\": \"HOURLY\"\n}"
+        }
+      }
+    },
+    {
+      "name": "5. Search jobs",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{jobUrl}}/api/jobs?category=hospitality&minPay=25",
+          "host": [
+            "{{jobUrl}}"
+          ],
+          "path": [
+            "api",
+            "jobs"
+          ],
+          "query": [
+            {
+              "key": "category",
+              "value": "hospitality"
+            },
+            {
+              "key": "minPay",
+              "value": "25"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "6. Update student profile",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{userUrl}}/api/students/1/profile",
+          "host": [
+            "{{userUrl}}"
+          ],
+          "path": [
+            "api",
+            "students",
+            "1",
+            "profile"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"skills\": [\n    \"barista\",\n    \"customer service\",\n    \"java\",\n    \"tutoring\"\n  ],\n  \"availability\": \"FLEXIBLE\"\n}"
+        }
+      }
+    },
+    {
+      "name": "7. Apply for job 1",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{appUrl}}/api/applications",
+          "host": [
+            "{{appUrl}}"
+          ],
+          "path": [
+            "api",
+            "applications"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"jobId\": 1,\n  \"studentId\": 1,\n  \"coverMessage\": \"I have two years of barista experience.\"\n}"
+        }
+      }
+    },
+    {
+      "name": "8. Applications for job 1",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{appUrl}}/api/applications?jobId=1",
+          "host": [
+            "{{appUrl}}"
+          ],
+          "path": [
+            "api",
+            "applications"
+          ],
+          "query": [
+            {
+              "key": "jobId",
+              "value": "1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "9. Shortlist application",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{appUrl}}/api/applications/1/status",
+          "host": [
+            "{{appUrl}}"
+          ],
+          "path": [
+            "api",
+            "applications",
+            "1",
+            "status"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"SHORTLISTED\"\n}"
+        }
+      }
+    },
+    {
+      "name": "10. Accept application",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{appUrl}}/api/applications/1/status",
+          "host": [
+            "{{appUrl}}"
+          ],
+          "path": [
+            "api",
+            "applications",
+            "1",
+            "status"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"ACCEPTED\"\n}"
+        }
+      }
+    },
+    {
+      "name": "11. Student notifications",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{matchUrl}}/api/notifications/students/1",
+          "host": [
+            "{{matchUrl}}"
+          ],
+          "path": [
+            "api",
+            "notifications",
+            "students",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "12. Job recommendations",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{matchUrl}}/api/matching/students/1/recommendations",
+          "host": [
+            "{{matchUrl}}"
+          ],
+          "path": [
+            "api",
+            "matching",
+            "students",
+            "1",
+            "recommendations"
+          ]
+        }
+      }
+    },
+    {
+      "name": "13. Live jobs per category",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{matchUrl}}/api/analytics/jobs-per-category",
+          "host": [
+            "{{matchUrl}}"
+          ],
+          "path": [
+            "api",
+            "analytics",
+            "jobs-per-category"
+          ]
+        }
+      }
+    },
+    {
+      "name": "14. Live applications per job",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{matchUrl}}/api/analytics/applications-per-job",
+          "host": [
+            "{{matchUrl}}"
+          ],
+          "path": [
+            "api",
+            "analytics",
+            "applications-per-job"
+          ]
+        }
+      }
+    },
+    {
+      "name": "15. Close job 2",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{jobUrl}}/api/jobs/2/close",
+          "host": [
+            "{{jobUrl}}"
+          ],
+          "path": [
+            "api",
+            "jobs",
+            "2",
+            "close"
+          ]
+        }
+      }
+    },
+    {
+      "name": "16. Apply to closed job (expect 409)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{appUrl}}/api/applications",
+          "host": [
+            "{{appUrl}}"
+          ],
+          "path": [
+            "api",
+            "applications"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"jobId\": 2,\n  \"studentId\": 1,\n  \"coverMessage\": \"Keen to tutor.\"\n}"
+        }
+      }
+    },
+    {
+      "name": "17. Edit job 1",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{jobUrl}}/api/jobs/1",
+          "host": [
+            "{{jobUrl}}"
+          ],
+          "path": [
+            "api",
+            "jobs",
+            "1"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"employerId\": 1,\n  \"title\": \"Weekend Barista (2 shifts)\",\n  \"description\": \"Saturday and Sunday mornings.\",\n  \"category\": \"hospitality\",\n  \"location\": \"Wollongong\",\n  \"payAmount\": 30.0,\n  \"payType\": \"HOURLY\"\n}"
+        }
+      }
+    },
+    {
+      "name": "18. Trending jobs",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{matchUrl}}/api/analytics/trending-jobs",
+          "host": [
+            "{{matchUrl}}"
+          ],
+          "path": [
+            "api",
+            "analytics",
+            "trending-jobs"
+          ]
+        }
+      }
+    },
+    {
+      "name": "19. Analytics source",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{matchUrl}}/api/analytics/source",
+          "host": [
+            "{{matchUrl}}"
+          ],
+          "path": [
+            "api",
+            "analytics",
+            "source"
+          ]
+        }
+      }
+    },
+    {
+      "name": "20. AI status",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{matchUrl}}/api/ai/status",
+          "host": [
+            "{{matchUrl}}"
+          ],
+          "path": [
+            "api",
+            "ai",
+            "status"
+          ]
+        }
+      }
+    },
+    {
+      "name": "21. AI job recommendations",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{matchUrl}}/api/ai/students/1/recommendations",
+          "host": [
+            "{{matchUrl}}"
+          ],
+          "path": [
+            "api",
+            "ai",
+            "students",
+            "1",
+            "recommendations"
+          ]
+        }
+      }
+    },
+    {
+      "name": "22. AI job ad review",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{matchUrl}}/api/ai/job-ad/review",
+          "host": [
+            "{{matchUrl}}"
+          ],
+          "path": [
+            "api",
+            "ai",
+            "job-ad",
+            "review"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"barista needed\",\n  \"category\": \"hospitality\",\n  \"location\": \"Wollongong\",\n  \"pay\": \"28.50 HOURLY\",\n  \"description\": \"make coffee weekends must be fast\"\n}"
+        }
+      }
+    }
+  ]
+}

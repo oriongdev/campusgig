@@ -1,0 +1,52 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: matching-service
+  datasource:
+    url: jdbc:h2:mem:matchingdb
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+  h2:
+    console:
+      enabled: true
+  cloud:
+    function:
+      definition: onJobPosted;onJobUpdated;onJobClosed;onStudentProfileUpdated;onApplicationSubmitted;onApplicationStatusChanged
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+      bindings:
+        onJobPosted-in-0:
+          destination: job-posted
+          group: matching-service
+        onJobUpdated-in-0:
+          destination: job-updated
+          group: matching-service
+        onJobClosed-in-0:
+          destination: job-closed
+          group: matching-service
+        onStudentProfileUpdated-in-0:
+          destination: student-profile-updated
+          group: matching-service
+        onApplicationSubmitted-in-0:
+          destination: application-submitted
+          group: matching-service
+        onApplicationStatusChanged-in-0:
+          destination: application-status-changed
+          group: matching-service
+
+campusgig:
+  ai:
+    # Get a free key at https://aistudio.google.com/apikey then run:
+    #   export GEMINI_API_KEY=your-key        (macOS/Linux)
+    #   set GEMINI_API_KEY=your-key           (Windows)
+    api-key: ${GEMINI_API_KEY:}
+    # Alternatives: gemini-3.5-flash (stronger), gemini-flash-latest (always newest)
+    model: gemini-3.1-flash-lite

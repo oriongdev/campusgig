@@ -1,0 +1,31 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: application-service
+  datasource:
+    url: jdbc:h2:mem:applicationdb
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+  h2:
+    console:
+      enabled: true
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+      bindings:
+        applicationSubmitted-out-0:
+          destination: application-submitted
+        applicationStatusChanged-out-0:
+          destination: application-status-changed
+
+campusgig:
+  job-service:
+    url: http://localhost:8082
