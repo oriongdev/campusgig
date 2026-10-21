@@ -4,8 +4,6 @@ The prompts behind the AI-assisted work on CampusGig. The report's AI-driven dev
 refers to these files as evidence of how the team worked with AI tools.
 
 | File | What it holds |
-|---|---|
-| `development-prompts.md` | The prompts the team gave the AI assistant while building the system, session by session, with what each one produced. |
 | `matching-agent.md` | The prompt and tools the job matching agent runs on, and why they are written that way. |
 | `job-ad-assistant.md` | The prompts of the writer agent that rewrites a job ad. |
 | `job-ad-critic.md` | The prompt of the critic agent that reviews the rewrite. |
