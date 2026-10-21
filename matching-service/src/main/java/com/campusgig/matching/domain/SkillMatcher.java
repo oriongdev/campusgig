@@ -7,7 +7,8 @@ import java.util.Set;
 
 /**
  * Domain service: scores how well a job fits a student, based on the student's skills.
- * This is the rule-based first version; the LangChain4j matching agent will build on it.
+ * The score is the share of the student's skills that appear in the job's title, category or
+ * description. It needs no LLM, so it also serves as the fallback for the AI matching agent.
  */
 public class SkillMatcher {
 

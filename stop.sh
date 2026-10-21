@@ -8,10 +8,11 @@ if [ -n "$pids" ]; then
   kill $pids 2>/dev/null || true
 fi
 
-if docker info >/dev/null 2>&1 && docker compose ps -q kafka >/dev/null 2>&1; then
+if docker info >/dev/null 2>&1 && [ -n "$(docker compose ps -q kafka 2>/dev/null)" ]; then
   echo "==> Stopping Kafka (Docker)"
   docker compose down
-elif command -v brew >/dev/null 2>&1; then
+fi
+if command -v brew >/dev/null 2>&1 && brew services list 2>/dev/null | grep -q '^kafka .*started'; then
   echo "==> Stopping Kafka (Homebrew)"
   brew services stop kafka
 fi

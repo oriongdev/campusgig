@@ -1,6 +1,6 @@
 package com.campusgig.matching.presentation;
 
-import com.campusgig.matching.domain.AiRecommendation;
+import com.campusgig.matching.domain.AiRecommendationResult;
 import com.campusgig.matching.domain.JobAdReview;
 import com.campusgig.matching.presentation.dto.JobAdRequest;
 import com.campusgig.matching.service.AiAgentService;
@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -30,11 +29,13 @@ public class AiController {
         return Map.of("enabled", aiAgentService.isEnabled());
     }
 
+    /** Job matching agent (requirement 13). Falls back to rule-based matches if the LLM fails. */
     @GetMapping("/students/{studentId}/recommendations")
-    public List<AiRecommendation> recommendations(@PathVariable("studentId") Long studentId) {
+    public AiRecommendationResult recommendations(@PathVariable("studentId") Long studentId) {
         return aiAgentService.recommendJobs(studentId);
     }
 
+    /** Job ad assistant with a reviewer agent (requirement 14). */
     @PostMapping("/job-ad/review")
     public JobAdReview reviewJobAd(@RequestBody JobAdRequest request) {
         return aiAgentService.reviewJobAd(

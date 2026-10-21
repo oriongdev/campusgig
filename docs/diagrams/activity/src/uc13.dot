@@ -1,0 +1,62 @@
+digraph "uc13" {
+  graph [rankdir=TB, fontname="Inter", fontsize=13, labelloc=t, labeljust=l, label=<<b>UC13  AI matching agent recommends jobs to a student</b>>, pad=0.25, nodesep=0.35, ranksep=0.42, splines=spline, bgcolor="white", newrank=true, fontcolor="#1B2B45"];
+  node [fontname="Inter", fontcolor="#1B2B45", penwidth=1.1];
+  edge [fontname="Inter", fontsize=9.5, color="#1B2B45", fontcolor="#33425C", arrowsize=0.7, penwidth=1.0];
+  subgraph cluster_student {
+    label=<<b>Student</b>>; labelloc=t; labeljust=c; fontsize=11.5; fontname="Inter"; fontcolor="#1B2B45";
+    style="filled"; fillcolor="#EEF4FF"; color="#B8C4D6"; margin=14;
+    student__top [shape=point, style=invis, width=0, height=0, label=""];
+    student__bot [shape=point, style=invis, width=0, height=0, label=""];
+    s [shape=circle, style=filled, fillcolor="#1B2B45", color="#1B2B45", label="", width=0.24, height=0.24, fixedsize=true];
+    ask [shape=box, style="filled,rounded", fillcolor="#FFFFFF", color="#1B2B45", label="Choose Ask the AI agent", fontsize=10.5, margin="0.14,0.08"];
+    see [shape=box, style="filled,rounded", fillcolor="#FFFFFF", color="#1B2B45", label="See the jobs, each with\na score and a reason", fontsize=10.5, margin="0.14,0.08"];
+    e [shape=doublecircle, style=filled, fillcolor="#1B2B45", color="#1B2B45", label="", width=0.2, height=0.2, fixedsize=true];
+  }
+  subgraph cluster_match {
+    label=<<b>matching-service</b>>; labelloc=t; labeljust=c; fontsize=11.5; fontname="Inter"; fontcolor="#1B2B45";
+    style="filled"; fillcolor="#F5F7FA"; color="#B8C4D6"; margin=14;
+    match__top [shape=point, style=invis, width=0, height=0, label=""];
+    match__bot [shape=point, style=invis, width=0, height=0, label=""];
+    conf [shape=diamond, style=filled, fillcolor="#FFFFFF", color="#1B2B45", label="API key\nconfigured?", fontsize=10, margin="0.16,0.10"];
+    prof [shape=diamond, style=filled, fillcolor="#FFFFFF", color="#1B2B45", label="Student profile\nreceived yet?", fontsize=10, margin="0.16,0.10"];
+    err [shape=box, style="filled,rounded", fillcolor="#FFFFFF", color="#1B2B45", label="Return the error with\nits reason", fontsize=10.5, margin="0.14,0.08"];
+    ex [shape=doublecircle, style=filled, fillcolor="#1B2B45", color="#1B2B45", label="", width=0.2, height=0.2, fixedsize=true];
+    build [shape=box, style="filled,rounded", fillcolor="#FFFFFF", color="#1B2B45", label="Describe the student's\nskills and availability", fontsize=10.5, margin="0.14,0.08"];
+    tool [shape=box, style="filled,rounded", fillcolor="#FFFFFF", color="#1B2B45", label="Run listOpenJobs or\nfindJobsByCategory on\nthe JobSnapshots", fontsize=10.5, margin="0.14,0.08"];
+    usable [shape=diamond, style=filled, fillcolor="#FFFFFF", color="#1B2B45", label="Call succeeded and\nreply readable?", fontsize=10, margin="0.16,0.10"];
+    check [shape=box, style="filled,rounded", fillcolor="#FFFFFF", color="#1B2B45", label="Drop jobs that are not\non the board, limit the\nscores, keep the best 5", fontsize=10.5, margin="0.14,0.08"];
+    rule [shape=box, style="filled,rounded", fillcolor="#FFFFFF", color="#1B2B45", label="Use the rule-based\nSkillMatcher instead", fontsize=10.5, margin="0.14,0.08"];
+    ret [shape=box, style="filled,rounded", fillcolor="#FFFFFF", color="#1B2B45", label="Return the\nrecommendations and\nwhere they came from", fontsize=10.5, margin="0.14,0.08"];
+  }
+  subgraph cluster_llm {
+    label=<<b>Gemini (LLM)</b>>; labelloc=t; labeljust=c; fontsize=11.5; fontname="Inter"; fontcolor="#1B2B45";
+    style="filled"; fillcolor="#FFF7E6"; color="#B8C4D6"; margin=14;
+    llm__top [shape=point, style=invis, width=0, height=0, label=""];
+    llm__bot [shape=point, style=invis, width=0, height=0, label=""];
+    think [shape=box, style="filled,rounded", fillcolor="#FFFFFF", color="#1B2B45", label="Decide which tool to\ncall", fontsize=10.5, margin="0.14,0.08"];
+    rank [shape=box, style="filled,rounded", fillcolor="#FFFFFF", color="#1B2B45", label="Rank the jobs and reply\nin JSON", fontsize=10.5, margin="0.14,0.08"];
+  }
+  { rank=min; student__top; match__top; llm__top; }
+  { rank=max; student__bot; match__bot; llm__bot; }
+  student__top -> match__top -> llm__top [style=invis];
+  student__top -> student__bot [style=invis, weight=0];
+  match__top -> match__bot [style=invis, weight=0];
+  llm__top -> llm__bot [style=invis, weight=0];
+  s -> ask;
+  ask -> conf;
+  conf -> err [label=" no: 503 "];
+  conf -> prof [label=" yes "];
+  prof -> err [label=" no: 404 "];
+  prof -> build [label=" yes "];
+  err -> ex;
+  build -> think;
+  think -> tool;
+  tool -> rank;
+  rank -> usable;
+  usable -> check [label=" yes "];
+  usable -> rule [label=" no "];
+  check -> ret;
+  rule -> ret;
+  ret -> see;
+  see -> e;
+}

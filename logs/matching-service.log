@@ -8,25 +8,25 @@
  :: Spring Boot ::   v3.5.16
  :: Spring Cloud Stream ::   v4.3.3
  :: Spring Cloud Function ::   v4.3.4
-2026-09-18T20:49:45.652+10:00  INFO 69669 --- [matching-service] [           main] c.c.matching.MatchingServiceApplication  : Starting MatchingServiceApplication using Java 26.0.2.1 with PID 69669 (/Users/orion/Downloads/campusgig 3/matching-service/target/classes started by orion in /Users/orion/Downloads/campusgig 3/matching-service)
-2026-09-18T20:49:45.653+10:00  INFO 69669 --- [matching-service] [           main] c.c.matching.MatchingServiceApplication  : No active profile set, falling back to 1 default profile: "default"
-2026-09-18T20:49:46.268+10:00  INFO 69669 --- [matching-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-09-18T20:49:46.612+10:00  INFO 69669 --- [matching-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 339 ms. Found 3 JPA repository interfaces.
-2026-09-18T20:49:46.760+10:00  INFO 69669 --- [matching-service] [           main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
-2026-09-18T20:49:46.764+10:00  INFO 69669 --- [matching-service] [           main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
-2026-09-18T20:49:47.594+10:00  INFO 69669 --- [matching-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8084 (http)
-2026-09-18T20:49:47.605+10:00  INFO 69669 --- [matching-service] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-09-18T20:49:47.605+10:00  INFO 69669 --- [matching-service] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
-2026-09-18T20:49:47.638+10:00  INFO 69669 --- [matching-service] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2026-09-18T20:49:47.639+10:00  INFO 69669 --- [matching-service] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1960 ms
-2026-09-18T20:49:47.742+10:00  INFO 69669 --- [matching-service] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2026-09-18T20:49:47.773+10:00  INFO 69669 --- [matching-service] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.53.Final
-2026-09-18T20:49:47.798+10:00  INFO 69669 --- [matching-service] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2026-09-18T20:49:47.917+10:00  INFO 69669 --- [matching-service] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-09-18T20:49:47.935+10:00  INFO 69669 --- [matching-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2026-09-18T20:49:48.023+10:00  INFO 69669 --- [matching-service] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:matchingdb user=SA
-2026-09-18T20:49:48.024+10:00  INFO 69669 --- [matching-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2026-09-18T20:49:48.052+10:00  INFO 69669 --- [matching-service] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2026-10-21T13:23:47.947+11:00  INFO 44846 --- [matching-service] [           main] c.c.matching.MatchingServiceApplication  : Starting MatchingServiceApplication using Java 26.0.2.1 with PID 44846 (/Users/orion/Documents/GitHub/campusgig/matching-service/target/classes started by orion in /Users/orion/Documents/GitHub/campusgig/matching-service)
+2026-10-21T13:23:47.949+11:00  INFO 44846 --- [matching-service] [           main] c.c.matching.MatchingServiceApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-10-21T13:23:48.457+11:00  INFO 44846 --- [matching-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-21T13:23:48.659+11:00  INFO 44846 --- [matching-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 191 ms. Found 3 JPA repository interfaces.
+2026-10-21T13:23:48.933+11:00  INFO 44846 --- [matching-service] [           main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2026-10-21T13:23:48.947+11:00  INFO 44846 --- [matching-service] [           main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2026-10-21T13:23:50.953+11:00  INFO 44846 --- [matching-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8084 (http)
+2026-10-21T13:23:51.111+11:00  INFO 44846 --- [matching-service] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-21T13:23:51.121+11:00  INFO 44846 --- [matching-service] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-10-21T13:23:51.312+11:00  INFO 44846 --- [matching-service] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-10-21T13:23:51.312+11:00  INFO 44846 --- [matching-service] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3340 ms
+2026-10-21T13:23:51.724+11:00  INFO 44846 --- [matching-service] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-21T13:23:51.963+11:00  INFO 44846 --- [matching-service] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.53.Final
+2026-10-21T13:23:52.062+11:00  INFO 44846 --- [matching-service] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-10-21T13:23:52.461+11:00  INFO 44846 --- [matching-service] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-21T13:23:52.485+11:00  INFO 44846 --- [matching-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-10-21T13:23:52.587+11:00  INFO 44846 --- [matching-service] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:matchingdb user=SA
+2026-10-21T13:23:52.587+11:00  INFO 44846 --- [matching-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-10-21T13:23:52.619+11:00  INFO 44846 --- [matching-service] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 2.3.232
@@ -34,33 +34,32 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2026-09-18T20:49:48.544+10:00  INFO 69669 --- [matching-service] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-09-18T20:49:48.580+10:00  INFO 69669 --- [matching-service] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-09-18T20:49:48.759+10:00  INFO 69669 --- [matching-service] [           main] c.c.m.infrastructure.ai.GeminiConfig     : AI agents enabled using Gemini model gemini-3.1-flash-lite
-2026-09-18T20:49:49.042+10:00  INFO 69669 --- [matching-service] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:matchingdb'
-2026-09-18T20:49:49.211+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'matching-service.onJobPosted-in-0' has 1 subscriber(s).
-2026-09-18T20:49:49.214+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'matching-service.onJobUpdated-in-0' has 1 subscriber(s).
-2026-09-18T20:49:49.216+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'matching-service.onJobClosed-in-0' has 1 subscriber(s).
-2026-09-18T20:49:49.219+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'matching-service.onStudentProfileUpdated-in-0' has 1 subscriber(s).
-2026-09-18T20:49:49.221+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'matching-service.onApplicationSubmitted-in-0' has 1 subscriber(s).
-2026-09-18T20:49:49.223+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'matching-service.onApplicationStatusChanged-in-0' has 1 subscriber(s).
-2026-09-18T20:49:49.252+10:00  INFO 69669 --- [matching-service] [           main] StreamsVersionAgnosticTopologyInfoFacade : Using method org.apache.kafka.streams.processor.internals.TopologyMetadata.sourceTopicsForStore(java.lang.String,java.lang.String)
-2026-09-18T20:49:49.291+10:00  INFO 69669 --- [matching-service] [           main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
-2026-09-18T20:49:49.292+10:00  INFO 69669 --- [matching-service] [           main] o.s.i.channel.PublishSubscribeChannel    : Channel 'matching-service.errorChannel' has 1 subscriber(s).
-2026-09-18T20:49:49.292+10:00  INFO 69669 --- [matching-service] [           main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
-2026-09-18T20:49:49.292+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.s.binder.DefaultBinderFactory      : Creating binder: ktable
-2026-09-18T20:49:49.292+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.s.binder.DefaultBinderFactory      : Constructing binder child context for ktable
-2026-09-18T20:49:49.317+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.s.binder.DefaultBinderFactory      : Caching the binder: ktable
-2026-09-18T20:49:49.317+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.s.binder.DefaultBinderFactory      : Creating binder: kafka
-2026-09-18T20:49:49.317+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.s.binder.DefaultBinderFactory      : Constructing binder child context for kafka
-2026-09-18T20:49:49.340+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.s.binder.DefaultBinderFactory      : Caching the binder: kafka
-2026-09-18T20:49:49.340+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.s.binder.DefaultBinderFactory      : Creating binder: kstream
-2026-09-18T20:49:49.340+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.s.binder.DefaultBinderFactory      : Constructing binder child context for kstream
-2026-09-18T20:49:49.348+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.s.binder.DefaultBinderFactory      : Caching the binder: kstream
-2026-09-18T20:49:49.348+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.s.binder.DefaultBinderFactory      : Creating binder: globalktable
-2026-09-18T20:49:49.348+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.s.binder.DefaultBinderFactory      : Constructing binder child context for globalktable
-2026-09-18T20:49:49.352+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.s.binder.DefaultBinderFactory      : Caching the binder: globalktable
-2026-09-18T20:49:49.357+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
+2026-10-21T13:23:53.224+11:00  INFO 44846 --- [matching-service] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-21T13:23:53.253+11:00  INFO 44846 --- [matching-service] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-21T13:23:53.551+11:00  INFO 44846 --- [matching-service] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:matchingdb'
+2026-10-21T13:23:53.694+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'matching-service.onJobPosted-in-0' has 1 subscriber(s).
+2026-10-21T13:23:53.696+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'matching-service.onJobUpdated-in-0' has 1 subscriber(s).
+2026-10-21T13:23:53.699+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'matching-service.onJobClosed-in-0' has 1 subscriber(s).
+2026-10-21T13:23:53.701+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'matching-service.onStudentProfileUpdated-in-0' has 1 subscriber(s).
+2026-10-21T13:23:53.704+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'matching-service.onApplicationSubmitted-in-0' has 1 subscriber(s).
+2026-10-21T13:23:53.706+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.s.m.DirectWithAttributesChannel    : Channel 'matching-service.onApplicationStatusChanged-in-0' has 1 subscriber(s).
+2026-10-21T13:23:53.734+11:00  INFO 44846 --- [matching-service] [           main] StreamsVersionAgnosticTopologyInfoFacade : Using method org.apache.kafka.streams.processor.internals.TopologyMetadata.sourceTopicsForStore(java.lang.String,java.lang.String)
+2026-10-21T13:23:53.775+11:00  INFO 44846 --- [matching-service] [           main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2026-10-21T13:23:53.775+11:00  INFO 44846 --- [matching-service] [           main] o.s.i.channel.PublishSubscribeChannel    : Channel 'matching-service.errorChannel' has 1 subscriber(s).
+2026-10-21T13:23:53.776+11:00  INFO 44846 --- [matching-service] [           main] o.s.i.endpoint.EventDrivenConsumer       : started bean '_org.springframework.integration.errorLogger'
+2026-10-21T13:23:53.776+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.s.binder.DefaultBinderFactory      : Creating binder: ktable
+2026-10-21T13:23:53.776+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.s.binder.DefaultBinderFactory      : Constructing binder child context for ktable
+2026-10-21T13:23:53.801+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.s.binder.DefaultBinderFactory      : Caching the binder: ktable
+2026-10-21T13:23:53.801+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.s.binder.DefaultBinderFactory      : Creating binder: kafka
+2026-10-21T13:23:53.801+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.s.binder.DefaultBinderFactory      : Constructing binder child context for kafka
+2026-10-21T13:23:53.827+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.s.binder.DefaultBinderFactory      : Caching the binder: kafka
+2026-10-21T13:23:53.827+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.s.binder.DefaultBinderFactory      : Creating binder: kstream
+2026-10-21T13:23:53.827+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.s.binder.DefaultBinderFactory      : Constructing binder child context for kstream
+2026-10-21T13:23:53.834+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.s.binder.DefaultBinderFactory      : Caching the binder: kstream
+2026-10-21T13:23:53.835+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.s.binder.DefaultBinderFactory      : Creating binder: globalktable
+2026-10-21T13:23:53.835+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.s.binder.DefaultBinderFactory      : Constructing binder child context for globalktable
+2026-10-21T13:23:53.839+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.s.binder.DefaultBinderFactory      : Caching the binder: globalktable
+2026-10-21T13:23:53.845+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
 	auto.include.jmx.reporter = true
 	bootstrap.controllers = []
 	bootstrap.servers = [localhost:9092]
@@ -136,14 +135,14 @@
 	ssl.truststore.password = null
 	ssl.truststore.type = JKS
 
-2026-09-18T20:49:49.437+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
-2026-09-18T20:49:49.437+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
-2026-09-18T20:49:49.437+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1789728589437
-2026-09-18T20:49:49.633+10:00  INFO 69669 --- [matching-service] [| adminclient-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for adminclient-1 unregistered
-2026-09-18T20:49:49.635+10:00  INFO 69669 --- [matching-service] [| adminclient-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
-2026-09-18T20:49:49.635+10:00  INFO 69669 --- [matching-service] [| adminclient-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
-2026-09-18T20:49:49.635+10:00  INFO 69669 --- [matching-service] [| adminclient-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
-2026-09-18T20:49:49.645+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+2026-10-21T13:23:53.916+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
+2026-10-21T13:23:53.916+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
+2026-10-21T13:23:53.916+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1792549433915
+2026-10-21T13:23:54.121+11:00  INFO 44846 --- [matching-service] [| adminclient-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for adminclient-1 unregistered
+2026-10-21T13:23:54.125+11:00  INFO 44846 --- [matching-service] [| adminclient-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-10-21T13:23:54.125+11:00  INFO 44846 --- [matching-service] [| adminclient-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-10-21T13:23:54.126+11:00  INFO 44846 --- [matching-service] [| adminclient-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-10-21T13:23:54.133+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
 	allow.auto.create.topics = true
 	auto.commit.interval.ms = 100
 	auto.include.jmx.reporter = true
@@ -243,23 +242,23 @@
 	ssl.truststore.type = JKS
 	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
 
-2026-09-18T20:49:49.662+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
-2026-09-18T20:49:49.678+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
-2026-09-18T20:49:49.679+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
-2026-09-18T20:49:49.679+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1789728589678
-2026-09-18T20:49:49.683+10:00  INFO 69669 --- [matching-service] [           main] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-matching-service-1, groupId=matching-service] Cluster ID: DGHyaQEbRsiN8ViTsieyfA
-2026-09-18T20:49:49.684+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-1, groupId=matching-service] Resetting generation and member id due to: consumer pro-actively leaving the group
-2026-09-18T20:49:49.684+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-1, groupId=matching-service] Request joining group due to: consumer pro-actively leaving the group
-2026-09-18T20:49:49.685+10:00  INFO 69669 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
-2026-09-18T20:49:49.685+10:00  INFO 69669 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
-2026-09-18T20:49:49.685+10:00  INFO 69669 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
-2026-09-18T20:49:49.685+10:00  INFO 69669 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
-2026-09-18T20:49:49.687+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-matching-service-1 unregistered
-2026-09-18T20:49:49.697+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-2046584401.onJobPosted-in-0.errors' has 1 subscriber(s).
-2026-09-18T20:49:49.698+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-2046584401.onJobPosted-in-0.errors' has 0 subscriber(s).
-2026-09-18T20:49:49.698+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-2046584401.onJobPosted-in-0.errors' has 1 subscriber(s).
-2026-09-18T20:49:49.698+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-2046584401.onJobPosted-in-0.errors' has 2 subscriber(s).
-2026-09-18T20:49:49.704+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+2026-10-21T13:23:54.156+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-10-21T13:23:54.173+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
+2026-10-21T13:23:54.173+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
+2026-10-21T13:23:54.173+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1792549434173
+2026-10-21T13:23:54.177+11:00  INFO 44846 --- [matching-service] [           main] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-matching-service-1, groupId=matching-service] Cluster ID: DGHyaQEbRsiN8ViTsieyfA
+2026-10-21T13:23:54.178+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-1, groupId=matching-service] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-10-21T13:23:54.178+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-1, groupId=matching-service] Request joining group due to: consumer pro-actively leaving the group
+2026-10-21T13:23:54.180+11:00  INFO 44846 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-10-21T13:23:54.180+11:00  INFO 44846 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-10-21T13:23:54.180+11:00  INFO 44846 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-10-21T13:23:54.180+11:00  INFO 44846 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-10-21T13:23:54.181+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-matching-service-1 unregistered
+2026-10-21T13:23:54.194+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-1791587374.onJobPosted-in-0.errors' has 1 subscriber(s).
+2026-10-21T13:23:54.194+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-1791587374.onJobPosted-in-0.errors' has 0 subscriber(s).
+2026-10-21T13:23:54.194+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-1791587374.onJobPosted-in-0.errors' has 1 subscriber(s).
+2026-10-21T13:23:54.194+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-1791587374.onJobPosted-in-0.errors' has 2 subscriber(s).
+2026-10-21T13:23:54.202+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
 	allow.auto.create.topics = true
 	auto.commit.interval.ms = 100
 	auto.include.jmx.reporter = true
@@ -359,13 +358,13 @@
 	ssl.truststore.type = JKS
 	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
 
-2026-09-18T20:49:49.705+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
-2026-09-18T20:49:49.706+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
-2026-09-18T20:49:49.706+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
-2026-09-18T20:49:49.706+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1789728589706
-2026-09-18T20:49:49.707+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-matching-service-2, groupId=matching-service] Subscribed to topic(s): job-posted
-2026-09-18T20:49:49.709+10:00  INFO 69669 --- [matching-service] [           main] s.i.k.i.KafkaMessageDrivenChannelAdapter : started org.springframework.integration.kafka.inbound.KafkaMessageDrivenChannelAdapter@251ed676
-2026-09-18T20:49:49.712+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
+2026-10-21T13:23:54.202+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-10-21T13:23:54.204+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
+2026-10-21T13:23:54.204+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
+2026-10-21T13:23:54.204+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1792549434204
+2026-10-21T13:23:54.205+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-matching-service-2, groupId=matching-service] Subscribed to topic(s): job-posted
+2026-10-21T13:23:54.207+11:00  INFO 44846 --- [matching-service] [           main] s.i.k.i.KafkaMessageDrivenChannelAdapter : started org.springframework.integration.kafka.inbound.KafkaMessageDrivenChannelAdapter@d56d9f6
+2026-10-21T13:23:54.210+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
 	auto.include.jmx.reporter = true
 	bootstrap.controllers = []
 	bootstrap.servers = [localhost:9092]
@@ -441,16 +440,17 @@
 	ssl.truststore.password = null
 	ssl.truststore.type = JKS
 
-2026-09-18T20:49:49.713+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
-2026-09-18T20:49:49.713+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
-2026-09-18T20:49:49.713+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1789728589713
-2026-09-18T20:49:49.718+10:00  INFO 69669 --- [matching-service] [container-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-matching-service-2, groupId=matching-service] Cluster ID: DGHyaQEbRsiN8ViTsieyfA
-2026-09-18T20:49:49.722+10:00  INFO 69669 --- [matching-service] [| adminclient-2] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for adminclient-2 unregistered
-2026-09-18T20:49:49.722+10:00  INFO 69669 --- [matching-service] [| adminclient-2] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
-2026-09-18T20:49:49.722+10:00  INFO 69669 --- [matching-service] [| adminclient-2] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
-2026-09-18T20:49:49.722+10:00  INFO 69669 --- [matching-service] [| adminclient-2] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
-2026-09-18T20:49:49.722+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-2, groupId=matching-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
-2026-09-18T20:49:49.722+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+2026-10-21T13:23:54.210+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
+2026-10-21T13:23:54.210+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
+2026-10-21T13:23:54.210+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1792549434210
+2026-10-21T13:23:54.211+11:00  INFO 44846 --- [matching-service] [container-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-matching-service-2, groupId=matching-service] Cluster ID: DGHyaQEbRsiN8ViTsieyfA
+2026-10-21T13:23:54.216+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-2, groupId=matching-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-10-21T13:23:54.216+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-2, groupId=matching-service] (Re-)joining group
+2026-10-21T13:23:54.219+11:00  INFO 44846 --- [matching-service] [| adminclient-2] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for adminclient-2 unregistered
+2026-10-21T13:23:54.220+11:00  INFO 44846 --- [matching-service] [| adminclient-2] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-10-21T13:23:54.220+11:00  INFO 44846 --- [matching-service] [| adminclient-2] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-10-21T13:23:54.220+11:00  INFO 44846 --- [matching-service] [| adminclient-2] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-10-21T13:23:54.220+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
 	allow.auto.create.topics = true
 	auto.commit.interval.ms = 100
 	auto.include.jmx.reporter = true
@@ -550,24 +550,23 @@
 	ssl.truststore.type = JKS
 	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
 
-2026-09-18T20:49:49.723+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
-2026-09-18T20:49:49.723+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-2, groupId=matching-service] (Re-)joining group
-2026-09-18T20:49:49.724+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
-2026-09-18T20:49:49.724+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
-2026-09-18T20:49:49.724+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1789728589724
-2026-09-18T20:49:49.726+10:00  INFO 69669 --- [matching-service] [           main] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-matching-service-3, groupId=matching-service] Cluster ID: DGHyaQEbRsiN8ViTsieyfA
-2026-09-18T20:49:49.726+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-3, groupId=matching-service] Resetting generation and member id due to: consumer pro-actively leaving the group
-2026-09-18T20:49:49.726+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-3, groupId=matching-service] Request joining group due to: consumer pro-actively leaving the group
-2026-09-18T20:49:49.726+10:00  INFO 69669 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
-2026-09-18T20:49:49.726+10:00  INFO 69669 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
-2026-09-18T20:49:49.726+10:00  INFO 69669 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
-2026-09-18T20:49:49.726+10:00  INFO 69669 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
-2026-09-18T20:49:49.727+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-matching-service-3 unregistered
-2026-09-18T20:49:49.728+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-2046584401.onJobUpdated-in-0.errors' has 1 subscriber(s).
-2026-09-18T20:49:49.728+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-2046584401.onJobUpdated-in-0.errors' has 0 subscriber(s).
-2026-09-18T20:49:49.728+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-2046584401.onJobUpdated-in-0.errors' has 1 subscriber(s).
-2026-09-18T20:49:49.728+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-2046584401.onJobUpdated-in-0.errors' has 2 subscriber(s).
-2026-09-18T20:49:49.729+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+2026-10-21T13:23:54.220+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-10-21T13:23:54.222+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
+2026-10-21T13:23:54.222+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
+2026-10-21T13:23:54.222+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1792549434222
+2026-10-21T13:23:54.224+11:00  INFO 44846 --- [matching-service] [           main] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-matching-service-3, groupId=matching-service] Cluster ID: DGHyaQEbRsiN8ViTsieyfA
+2026-10-21T13:23:54.226+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-3, groupId=matching-service] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-10-21T13:23:54.226+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-3, groupId=matching-service] Request joining group due to: consumer pro-actively leaving the group
+2026-10-21T13:23:54.226+11:00  INFO 44846 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-10-21T13:23:54.226+11:00  INFO 44846 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-10-21T13:23:54.226+11:00  INFO 44846 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-10-21T13:23:54.226+11:00  INFO 44846 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-10-21T13:23:54.227+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-matching-service-3 unregistered
+2026-10-21T13:23:54.228+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-1791587374.onJobUpdated-in-0.errors' has 1 subscriber(s).
+2026-10-21T13:23:54.229+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-1791587374.onJobUpdated-in-0.errors' has 0 subscriber(s).
+2026-10-21T13:23:54.229+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-1791587374.onJobUpdated-in-0.errors' has 1 subscriber(s).
+2026-10-21T13:23:54.229+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-1791587374.onJobUpdated-in-0.errors' has 2 subscriber(s).
+2026-10-21T13:23:54.229+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
 	allow.auto.create.topics = true
 	auto.commit.interval.ms = 100
 	auto.include.jmx.reporter = true
@@ -667,13 +666,15 @@
 	ssl.truststore.type = JKS
 	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
 
-2026-09-18T20:49:49.729+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
-2026-09-18T20:49:49.730+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
-2026-09-18T20:49:49.730+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
-2026-09-18T20:49:49.730+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1789728589730
-2026-09-18T20:49:49.730+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-matching-service-4, groupId=matching-service] Subscribed to topic(s): job-updated
-2026-09-18T20:49:49.730+10:00  INFO 69669 --- [matching-service] [           main] s.i.k.i.KafkaMessageDrivenChannelAdapter : started org.springframework.integration.kafka.inbound.KafkaMessageDrivenChannelAdapter@5b2ac349
-2026-09-18T20:49:49.732+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
+2026-10-21T13:23:54.229+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-10-21T13:23:54.231+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
+2026-10-21T13:23:54.231+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
+2026-10-21T13:23:54.231+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1792549434231
+2026-10-21T13:23:54.231+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-matching-service-4, groupId=matching-service] Subscribed to topic(s): job-updated
+2026-10-21T13:23:54.242+11:00  INFO 44846 --- [matching-service] [           main] s.i.k.i.KafkaMessageDrivenChannelAdapter : started org.springframework.integration.kafka.inbound.KafkaMessageDrivenChannelAdapter@f64f47a
+2026-10-21T13:23:54.243+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-2, groupId=matching-service] Request joining group due to: need to re-join with the given member-id: consumer-matching-service-2-b9e395bd-fe30-4c5f-8bdd-d1f9c3c7d8ae
+2026-10-21T13:23:54.243+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-2, groupId=matching-service] (Re-)joining group
+2026-10-21T13:23:54.245+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
 	auto.include.jmx.reporter = true
 	bootstrap.controllers = []
 	bootstrap.servers = [localhost:9092]
@@ -749,21 +750,19 @@
 	ssl.truststore.password = null
 	ssl.truststore.type = JKS
 
-2026-09-18T20:49:49.732+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
-2026-09-18T20:49:49.732+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
-2026-09-18T20:49:49.732+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1789728589732
-2026-09-18T20:49:49.733+10:00  INFO 69669 --- [matching-service] [container-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-matching-service-4, groupId=matching-service] Cluster ID: DGHyaQEbRsiN8ViTsieyfA
-2026-09-18T20:49:49.734+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-4, groupId=matching-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
-2026-09-18T20:49:49.735+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-4, groupId=matching-service] (Re-)joining group
-2026-09-18T20:49:49.743+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-2, groupId=matching-service] Request joining group due to: need to re-join with the given member-id: consumer-matching-service-2-c9d0187d-cc4c-45a3-9a2c-3d3cc8ae8445
-2026-09-18T20:49:49.743+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-2, groupId=matching-service] (Re-)joining group
-2026-09-18T20:49:49.744+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-4, groupId=matching-service] Request joining group due to: need to re-join with the given member-id: consumer-matching-service-4-7086d90a-0fbc-4e33-9629-b8879dab6c9e
-2026-09-18T20:49:49.744+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-4, groupId=matching-service] (Re-)joining group
-2026-09-18T20:49:49.745+10:00  INFO 69669 --- [matching-service] [| adminclient-3] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for adminclient-3 unregistered
-2026-09-18T20:49:49.746+10:00  INFO 69669 --- [matching-service] [| adminclient-3] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
-2026-09-18T20:49:49.746+10:00  INFO 69669 --- [matching-service] [| adminclient-3] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
-2026-09-18T20:49:49.746+10:00  INFO 69669 --- [matching-service] [| adminclient-3] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
-2026-09-18T20:49:49.746+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+2026-10-21T13:23:54.246+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
+2026-10-21T13:23:54.246+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
+2026-10-21T13:23:54.246+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1792549434246
+2026-10-21T13:23:54.246+11:00  INFO 44846 --- [matching-service] [container-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-matching-service-4, groupId=matching-service] Cluster ID: DGHyaQEbRsiN8ViTsieyfA
+2026-10-21T13:23:54.247+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-4, groupId=matching-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-10-21T13:23:54.247+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-4, groupId=matching-service] (Re-)joining group
+2026-10-21T13:23:54.249+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-4, groupId=matching-service] Request joining group due to: need to re-join with the given member-id: consumer-matching-service-4-24882e2e-792f-496a-9847-9f57b1e4fb1b
+2026-10-21T13:23:54.249+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-4, groupId=matching-service] (Re-)joining group
+2026-10-21T13:23:54.251+11:00  INFO 44846 --- [matching-service] [| adminclient-3] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for adminclient-3 unregistered
+2026-10-21T13:23:54.251+11:00  INFO 44846 --- [matching-service] [| adminclient-3] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-10-21T13:23:54.251+11:00  INFO 44846 --- [matching-service] [| adminclient-3] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-10-21T13:23:54.251+11:00  INFO 44846 --- [matching-service] [| adminclient-3] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-10-21T13:23:54.252+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
 	allow.auto.create.topics = true
 	auto.commit.interval.ms = 100
 	auto.include.jmx.reporter = true
@@ -863,23 +862,23 @@
 	ssl.truststore.type = JKS
 	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
 
-2026-09-18T20:49:49.746+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
-2026-09-18T20:49:49.748+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
-2026-09-18T20:49:49.748+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
-2026-09-18T20:49:49.748+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1789728589748
-2026-09-18T20:49:49.754+10:00  INFO 69669 --- [matching-service] [           main] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-matching-service-5, groupId=matching-service] Cluster ID: DGHyaQEbRsiN8ViTsieyfA
-2026-09-18T20:49:49.754+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-5, groupId=matching-service] Resetting generation and member id due to: consumer pro-actively leaving the group
-2026-09-18T20:49:49.754+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-5, groupId=matching-service] Request joining group due to: consumer pro-actively leaving the group
-2026-09-18T20:49:49.754+10:00  INFO 69669 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
-2026-09-18T20:49:49.754+10:00  INFO 69669 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
-2026-09-18T20:49:49.754+10:00  INFO 69669 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
-2026-09-18T20:49:49.754+10:00  INFO 69669 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
-2026-09-18T20:49:49.755+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-matching-service-5 unregistered
-2026-09-18T20:49:49.756+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-2046584401.onJobClosed-in-0.errors' has 1 subscriber(s).
-2026-09-18T20:49:49.756+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-2046584401.onJobClosed-in-0.errors' has 0 subscriber(s).
-2026-09-18T20:49:49.756+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-2046584401.onJobClosed-in-0.errors' has 1 subscriber(s).
-2026-09-18T20:49:49.756+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-2046584401.onJobClosed-in-0.errors' has 2 subscriber(s).
-2026-09-18T20:49:49.757+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+2026-10-21T13:23:54.252+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-10-21T13:23:54.253+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
+2026-10-21T13:23:54.253+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
+2026-10-21T13:23:54.253+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1792549434253
+2026-10-21T13:23:54.255+11:00  INFO 44846 --- [matching-service] [           main] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-matching-service-5, groupId=matching-service] Cluster ID: DGHyaQEbRsiN8ViTsieyfA
+2026-10-21T13:23:54.255+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-5, groupId=matching-service] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-10-21T13:23:54.255+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-5, groupId=matching-service] Request joining group due to: consumer pro-actively leaving the group
+2026-10-21T13:23:54.255+11:00  INFO 44846 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-10-21T13:23:54.255+11:00  INFO 44846 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-10-21T13:23:54.255+11:00  INFO 44846 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-10-21T13:23:54.255+11:00  INFO 44846 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-10-21T13:23:54.256+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-matching-service-5 unregistered
+2026-10-21T13:23:54.257+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-1791587374.onJobClosed-in-0.errors' has 1 subscriber(s).
+2026-10-21T13:23:54.257+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-1791587374.onJobClosed-in-0.errors' has 0 subscriber(s).
+2026-10-21T13:23:54.257+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-1791587374.onJobClosed-in-0.errors' has 1 subscriber(s).
+2026-10-21T13:23:54.257+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-1791587374.onJobClosed-in-0.errors' has 2 subscriber(s).
+2026-10-21T13:23:54.258+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
 	allow.auto.create.topics = true
 	auto.commit.interval.ms = 100
 	auto.include.jmx.reporter = true
@@ -979,13 +978,14 @@
 	ssl.truststore.type = JKS
 	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
 
-2026-09-18T20:49:49.757+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
-2026-09-18T20:49:49.759+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
-2026-09-18T20:49:49.759+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
-2026-09-18T20:49:49.759+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1789728589759
-2026-09-18T20:49:49.759+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-matching-service-6, groupId=matching-service] Subscribed to topic(s): job-closed
-2026-09-18T20:49:49.759+10:00  INFO 69669 --- [matching-service] [           main] s.i.k.i.KafkaMessageDrivenChannelAdapter : started org.springframework.integration.kafka.inbound.KafkaMessageDrivenChannelAdapter@72e4905c
-2026-09-18T20:49:49.762+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
+2026-10-21T13:23:54.258+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-10-21T13:23:54.259+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
+2026-10-21T13:23:54.259+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
+2026-10-21T13:23:54.259+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1792549434259
+2026-10-21T13:23:54.259+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-matching-service-6, groupId=matching-service] Subscribed to topic(s): job-closed
+2026-10-21T13:23:54.259+11:00  INFO 44846 --- [matching-service] [           main] s.i.k.i.KafkaMessageDrivenChannelAdapter : started org.springframework.integration.kafka.inbound.KafkaMessageDrivenChannelAdapter@1cc9b564
+2026-10-21T13:23:54.261+11:00  INFO 44846 --- [matching-service] [container-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-matching-service-6, groupId=matching-service] Cluster ID: DGHyaQEbRsiN8ViTsieyfA
+2026-10-21T13:23:54.261+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
 	auto.include.jmx.reporter = true
 	bootstrap.controllers = []
 	bootstrap.servers = [localhost:9092]
@@ -1061,19 +1061,18 @@
 	ssl.truststore.password = null
 	ssl.truststore.type = JKS
 
-2026-09-18T20:49:49.762+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
-2026-09-18T20:49:49.762+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
-2026-09-18T20:49:49.762+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1789728589762
-2026-09-18T20:49:49.763+10:00  INFO 69669 --- [matching-service] [container-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-matching-service-6, groupId=matching-service] Cluster ID: DGHyaQEbRsiN8ViTsieyfA
-2026-09-18T20:49:49.776+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-6, groupId=matching-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
-2026-09-18T20:49:49.778+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-6, groupId=matching-service] (Re-)joining group
-2026-09-18T20:49:49.795+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-6, groupId=matching-service] Request joining group due to: need to re-join with the given member-id: consumer-matching-service-6-4bcf73ae-264a-44db-84b3-4bedc6b4890c
-2026-09-18T20:49:49.795+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-6, groupId=matching-service] (Re-)joining group
-2026-09-18T20:49:49.796+10:00  INFO 69669 --- [matching-service] [| adminclient-4] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for adminclient-4 unregistered
-2026-09-18T20:49:49.797+10:00  INFO 69669 --- [matching-service] [| adminclient-4] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
-2026-09-18T20:49:49.797+10:00  INFO 69669 --- [matching-service] [| adminclient-4] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
-2026-09-18T20:49:49.797+10:00  INFO 69669 --- [matching-service] [| adminclient-4] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
-2026-09-18T20:49:49.797+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+2026-10-21T13:23:54.261+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-6, groupId=matching-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-10-21T13:23:54.262+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
+2026-10-21T13:23:54.262+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
+2026-10-21T13:23:54.262+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1792549434262
+2026-10-21T13:23:54.262+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-6, groupId=matching-service] (Re-)joining group
+2026-10-21T13:23:54.263+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-6, groupId=matching-service] Request joining group due to: need to re-join with the given member-id: consumer-matching-service-6-310d095c-434e-4142-bdbf-abc56cf4faf0
+2026-10-21T13:23:54.263+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-6, groupId=matching-service] (Re-)joining group
+2026-10-21T13:23:54.266+11:00  INFO 44846 --- [matching-service] [| adminclient-4] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for adminclient-4 unregistered
+2026-10-21T13:23:54.267+11:00  INFO 44846 --- [matching-service] [| adminclient-4] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-10-21T13:23:54.267+11:00  INFO 44846 --- [matching-service] [| adminclient-4] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-10-21T13:23:54.267+11:00  INFO 44846 --- [matching-service] [| adminclient-4] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-10-21T13:23:54.267+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
 	allow.auto.create.topics = true
 	auto.commit.interval.ms = 100
 	auto.include.jmx.reporter = true
@@ -1173,23 +1172,23 @@
 	ssl.truststore.type = JKS
 	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
 
-2026-09-18T20:49:49.797+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
-2026-09-18T20:49:49.799+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
-2026-09-18T20:49:49.799+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
-2026-09-18T20:49:49.799+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1789728589799
-2026-09-18T20:49:49.801+10:00  INFO 69669 --- [matching-service] [           main] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-matching-service-7, groupId=matching-service] Cluster ID: DGHyaQEbRsiN8ViTsieyfA
-2026-09-18T20:49:49.801+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-7, groupId=matching-service] Resetting generation and member id due to: consumer pro-actively leaving the group
-2026-09-18T20:49:49.801+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-7, groupId=matching-service] Request joining group due to: consumer pro-actively leaving the group
-2026-09-18T20:49:49.802+10:00  INFO 69669 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
-2026-09-18T20:49:49.802+10:00  INFO 69669 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
-2026-09-18T20:49:49.802+10:00  INFO 69669 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
-2026-09-18T20:49:49.802+10:00  INFO 69669 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
-2026-09-18T20:49:49.802+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-matching-service-7 unregistered
-2026-09-18T20:49:49.805+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-2046584401.onStudentProfileUpdated-in-0.errors' has 1 subscriber(s).
-2026-09-18T20:49:49.805+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-2046584401.onStudentProfileUpdated-in-0.errors' has 0 subscriber(s).
-2026-09-18T20:49:49.805+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-2046584401.onStudentProfileUpdated-in-0.errors' has 1 subscriber(s).
-2026-09-18T20:49:49.805+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-2046584401.onStudentProfileUpdated-in-0.errors' has 2 subscriber(s).
-2026-09-18T20:49:49.805+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+2026-10-21T13:23:54.267+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-10-21T13:23:54.268+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
+2026-10-21T13:23:54.268+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
+2026-10-21T13:23:54.268+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1792549434268
+2026-10-21T13:23:54.270+11:00  INFO 44846 --- [matching-service] [           main] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-matching-service-7, groupId=matching-service] Cluster ID: DGHyaQEbRsiN8ViTsieyfA
+2026-10-21T13:23:54.270+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-7, groupId=matching-service] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-10-21T13:23:54.270+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-7, groupId=matching-service] Request joining group due to: consumer pro-actively leaving the group
+2026-10-21T13:23:54.270+11:00  INFO 44846 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-10-21T13:23:54.270+11:00  INFO 44846 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-10-21T13:23:54.270+11:00  INFO 44846 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-10-21T13:23:54.270+11:00  INFO 44846 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-10-21T13:23:54.271+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-matching-service-7 unregistered
+2026-10-21T13:23:54.272+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-1791587374.onStudentProfileUpdated-in-0.errors' has 1 subscriber(s).
+2026-10-21T13:23:54.272+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-1791587374.onStudentProfileUpdated-in-0.errors' has 0 subscriber(s).
+2026-10-21T13:23:54.272+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-1791587374.onStudentProfileUpdated-in-0.errors' has 1 subscriber(s).
+2026-10-21T13:23:54.272+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-1791587374.onStudentProfileUpdated-in-0.errors' has 2 subscriber(s).
+2026-10-21T13:23:54.272+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
 	allow.auto.create.topics = true
 	auto.commit.interval.ms = 100
 	auto.include.jmx.reporter = true
@@ -1289,13 +1288,16 @@
 	ssl.truststore.type = JKS
 	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
 
-2026-09-18T20:49:49.805+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
-2026-09-18T20:49:49.807+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
-2026-09-18T20:49:49.807+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
-2026-09-18T20:49:49.807+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1789728589807
-2026-09-18T20:49:49.807+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-matching-service-8, groupId=matching-service] Subscribed to topic(s): student-profile-updated
-2026-09-18T20:49:49.807+10:00  INFO 69669 --- [matching-service] [           main] s.i.k.i.KafkaMessageDrivenChannelAdapter : started org.springframework.integration.kafka.inbound.KafkaMessageDrivenChannelAdapter@5fc3b20b
-2026-09-18T20:49:49.810+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
+2026-10-21T13:23:54.272+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-10-21T13:23:54.273+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
+2026-10-21T13:23:54.273+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
+2026-10-21T13:23:54.273+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1792549434273
+2026-10-21T13:23:54.273+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-matching-service-8, groupId=matching-service] Subscribed to topic(s): student-profile-updated
+2026-10-21T13:23:54.274+11:00  INFO 44846 --- [matching-service] [           main] s.i.k.i.KafkaMessageDrivenChannelAdapter : started org.springframework.integration.kafka.inbound.KafkaMessageDrivenChannelAdapter@51f714d1
+2026-10-21T13:23:54.275+11:00  INFO 44846 --- [matching-service] [container-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-matching-service-8, groupId=matching-service] Cluster ID: DGHyaQEbRsiN8ViTsieyfA
+2026-10-21T13:23:54.276+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-8, groupId=matching-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-10-21T13:23:54.276+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-8, groupId=matching-service] (Re-)joining group
+2026-10-21T13:23:54.276+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
 	auto.include.jmx.reporter = true
 	bootstrap.controllers = []
 	bootstrap.servers = [localhost:9092]
@@ -1371,19 +1373,16 @@
 	ssl.truststore.password = null
 	ssl.truststore.type = JKS
 
-2026-09-18T20:49:49.810+10:00  INFO 69669 --- [matching-service] [container-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-matching-service-8, groupId=matching-service] Cluster ID: DGHyaQEbRsiN8ViTsieyfA
-2026-09-18T20:49:49.810+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-8, groupId=matching-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
-2026-09-18T20:49:49.810+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
-2026-09-18T20:49:49.810+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
-2026-09-18T20:49:49.810+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1789728589810
-2026-09-18T20:49:49.811+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-8, groupId=matching-service] (Re-)joining group
-2026-09-18T20:49:49.812+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-8, groupId=matching-service] Request joining group due to: need to re-join with the given member-id: consumer-matching-service-8-930c268c-2ce9-43bc-87cd-bc39a45b6b67
-2026-09-18T20:49:49.812+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-8, groupId=matching-service] (Re-)joining group
-2026-09-18T20:49:49.815+10:00  INFO 69669 --- [matching-service] [| adminclient-5] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for adminclient-5 unregistered
-2026-09-18T20:49:49.815+10:00  INFO 69669 --- [matching-service] [| adminclient-5] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
-2026-09-18T20:49:49.815+10:00  INFO 69669 --- [matching-service] [| adminclient-5] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
-2026-09-18T20:49:49.816+10:00  INFO 69669 --- [matching-service] [| adminclient-5] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
-2026-09-18T20:49:49.816+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+2026-10-21T13:23:54.276+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
+2026-10-21T13:23:54.276+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
+2026-10-21T13:23:54.276+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1792549434276
+2026-10-21T13:23:54.277+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-8, groupId=matching-service] Request joining group due to: need to re-join with the given member-id: consumer-matching-service-8-f7421df6-78b0-4df8-b0a1-7659b0e52871
+2026-10-21T13:23:54.277+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-8, groupId=matching-service] (Re-)joining group
+2026-10-21T13:23:54.281+11:00  INFO 44846 --- [matching-service] [| adminclient-5] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for adminclient-5 unregistered
+2026-10-21T13:23:54.281+11:00  INFO 44846 --- [matching-service] [| adminclient-5] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-10-21T13:23:54.281+11:00  INFO 44846 --- [matching-service] [| adminclient-5] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-10-21T13:23:54.281+11:00  INFO 44846 --- [matching-service] [| adminclient-5] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-10-21T13:23:54.282+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
 	allow.auto.create.topics = true
 	auto.commit.interval.ms = 100
 	auto.include.jmx.reporter = true
@@ -1483,23 +1482,23 @@
 	ssl.truststore.type = JKS
 	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
 
-2026-09-18T20:49:49.816+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
-2026-09-18T20:49:49.817+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
-2026-09-18T20:49:49.817+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
-2026-09-18T20:49:49.817+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1789728589817
-2026-09-18T20:49:49.820+10:00  INFO 69669 --- [matching-service] [           main] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-matching-service-9, groupId=matching-service] Cluster ID: DGHyaQEbRsiN8ViTsieyfA
-2026-09-18T20:49:49.820+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-9, groupId=matching-service] Resetting generation and member id due to: consumer pro-actively leaving the group
-2026-09-18T20:49:49.820+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-9, groupId=matching-service] Request joining group due to: consumer pro-actively leaving the group
-2026-09-18T20:49:49.820+10:00  INFO 69669 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
-2026-09-18T20:49:49.820+10:00  INFO 69669 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
-2026-09-18T20:49:49.820+10:00  INFO 69669 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
-2026-09-18T20:49:49.820+10:00  INFO 69669 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
-2026-09-18T20:49:49.821+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-matching-service-9 unregistered
-2026-09-18T20:49:49.822+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-2046584401.onApplicationSubmitted-in-0.errors' has 1 subscriber(s).
-2026-09-18T20:49:49.822+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-2046584401.onApplicationSubmitted-in-0.errors' has 0 subscriber(s).
-2026-09-18T20:49:49.822+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-2046584401.onApplicationSubmitted-in-0.errors' has 1 subscriber(s).
-2026-09-18T20:49:49.822+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-2046584401.onApplicationSubmitted-in-0.errors' has 2 subscriber(s).
-2026-09-18T20:49:49.823+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+2026-10-21T13:23:54.282+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-10-21T13:23:54.283+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
+2026-10-21T13:23:54.283+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
+2026-10-21T13:23:54.283+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1792549434283
+2026-10-21T13:23:54.284+11:00  INFO 44846 --- [matching-service] [           main] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-matching-service-9, groupId=matching-service] Cluster ID: DGHyaQEbRsiN8ViTsieyfA
+2026-10-21T13:23:54.285+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-9, groupId=matching-service] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-10-21T13:23:54.289+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-9, groupId=matching-service] Request joining group due to: consumer pro-actively leaving the group
+2026-10-21T13:23:54.289+11:00  INFO 44846 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-10-21T13:23:54.289+11:00  INFO 44846 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-10-21T13:23:54.289+11:00  INFO 44846 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-10-21T13:23:54.289+11:00  INFO 44846 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-10-21T13:23:54.289+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-matching-service-9 unregistered
+2026-10-21T13:23:54.290+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-1791587374.onApplicationSubmitted-in-0.errors' has 1 subscriber(s).
+2026-10-21T13:23:54.290+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-1791587374.onApplicationSubmitted-in-0.errors' has 0 subscriber(s).
+2026-10-21T13:23:54.290+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-1791587374.onApplicationSubmitted-in-0.errors' has 1 subscriber(s).
+2026-10-21T13:23:54.290+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-1791587374.onApplicationSubmitted-in-0.errors' has 2 subscriber(s).
+2026-10-21T13:23:54.291+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
 	allow.auto.create.topics = true
 	auto.commit.interval.ms = 100
 	auto.include.jmx.reporter = true
@@ -1599,14 +1598,16 @@
 	ssl.truststore.type = JKS
 	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
 
-2026-09-18T20:49:49.823+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
-2026-09-18T20:49:49.824+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
-2026-09-18T20:49:49.824+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
-2026-09-18T20:49:49.824+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1789728589824
-2026-09-18T20:49:49.824+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] Subscribed to topic(s): application-submitted
-2026-09-18T20:49:49.824+10:00  INFO 69669 --- [matching-service] [           main] s.i.k.i.KafkaMessageDrivenChannelAdapter : started org.springframework.integration.kafka.inbound.KafkaMessageDrivenChannelAdapter@210c4071
-2026-09-18T20:49:49.828+10:00  INFO 69669 --- [matching-service] [container-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] Cluster ID: DGHyaQEbRsiN8ViTsieyfA
-2026-09-18T20:49:49.828+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
+2026-10-21T13:23:54.291+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-10-21T13:23:54.292+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
+2026-10-21T13:23:54.292+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
+2026-10-21T13:23:54.292+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1792549434292
+2026-10-21T13:23:54.292+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] Subscribed to topic(s): application-submitted
+2026-10-21T13:23:54.292+11:00  INFO 44846 --- [matching-service] [           main] s.i.k.i.KafkaMessageDrivenChannelAdapter : started org.springframework.integration.kafka.inbound.KafkaMessageDrivenChannelAdapter@2c226db0
+2026-10-21T13:23:54.293+11:00  INFO 44846 --- [matching-service] [container-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] Cluster ID: DGHyaQEbRsiN8ViTsieyfA
+2026-10-21T13:23:54.294+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-10-21T13:23:54.294+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] (Re-)joining group
+2026-10-21T13:23:54.294+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.clients.admin.AdminClientConfig    : AdminClientConfig values: 
 	auto.include.jmx.reporter = true
 	bootstrap.controllers = []
 	bootstrap.servers = [localhost:9092]
@@ -1682,16 +1683,16 @@
 	ssl.truststore.password = null
 	ssl.truststore.type = JKS
 
-2026-09-18T20:49:49.828+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
-2026-09-18T20:49:49.828+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
-2026-09-18T20:49:49.828+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
-2026-09-18T20:49:49.829+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1789728589828
-2026-09-18T20:49:49.829+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] (Re-)joining group
-2026-09-18T20:49:49.835+10:00  INFO 69669 --- [matching-service] [| adminclient-6] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for adminclient-6 unregistered
-2026-09-18T20:49:49.835+10:00  INFO 69669 --- [matching-service] [| adminclient-6] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
-2026-09-18T20:49:49.835+10:00  INFO 69669 --- [matching-service] [| adminclient-6] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
-2026-09-18T20:49:49.835+10:00  INFO 69669 --- [matching-service] [| adminclient-6] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
-2026-09-18T20:49:49.836+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+2026-10-21T13:23:54.294+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
+2026-10-21T13:23:54.294+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
+2026-10-21T13:23:54.294+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1792549434294
+2026-10-21T13:23:54.295+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] Request joining group due to: need to re-join with the given member-id: consumer-matching-service-10-9d8c6249-20f6-4f4f-b618-35c70d5b59b1
+2026-10-21T13:23:54.296+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] (Re-)joining group
+2026-10-21T13:23:54.298+11:00  INFO 44846 --- [matching-service] [| adminclient-6] o.a.kafka.common.utils.AppInfoParser     : App info kafka.admin.client for adminclient-6 unregistered
+2026-10-21T13:23:54.299+11:00  INFO 44846 --- [matching-service] [| adminclient-6] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-10-21T13:23:54.299+11:00  INFO 44846 --- [matching-service] [| adminclient-6] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-10-21T13:23:54.299+11:00  INFO 44846 --- [matching-service] [| adminclient-6] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-10-21T13:23:54.299+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
 	allow.auto.create.topics = true
 	auto.commit.interval.ms = 100
 	auto.include.jmx.reporter = true
@@ -1791,23 +1792,23 @@
 	ssl.truststore.type = JKS
 	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
 
-2026-09-18T20:49:49.836+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
-2026-09-18T20:49:49.837+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
-2026-09-18T20:49:49.837+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
-2026-09-18T20:49:49.837+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1789728589837
-2026-09-18T20:49:49.839+10:00  INFO 69669 --- [matching-service] [           main] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-matching-service-11, groupId=matching-service] Cluster ID: DGHyaQEbRsiN8ViTsieyfA
-2026-09-18T20:49:49.839+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-11, groupId=matching-service] Resetting generation and member id due to: consumer pro-actively leaving the group
-2026-09-18T20:49:49.839+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-11, groupId=matching-service] Request joining group due to: consumer pro-actively leaving the group
-2026-09-18T20:49:49.839+10:00  INFO 69669 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
-2026-09-18T20:49:49.839+10:00  INFO 69669 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
-2026-09-18T20:49:49.839+10:00  INFO 69669 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
-2026-09-18T20:49:49.839+10:00  INFO 69669 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
-2026-09-18T20:49:49.840+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-matching-service-11 unregistered
-2026-09-18T20:49:49.841+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-2046584401.onApplicationStatusChanged-in-0.errors' has 1 subscriber(s).
-2026-09-18T20:49:49.842+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-2046584401.onApplicationStatusChanged-in-0.errors' has 0 subscriber(s).
-2026-09-18T20:49:49.842+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-2046584401.onApplicationStatusChanged-in-0.errors' has 1 subscriber(s).
-2026-09-18T20:49:49.842+10:00  INFO 69669 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-2046584401.onApplicationStatusChanged-in-0.errors' has 2 subscriber(s).
-2026-09-18T20:49:49.842+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+2026-10-21T13:23:54.299+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-10-21T13:23:54.300+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
+2026-10-21T13:23:54.300+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
+2026-10-21T13:23:54.300+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1792549434300
+2026-10-21T13:23:54.302+11:00  INFO 44846 --- [matching-service] [           main] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-matching-service-11, groupId=matching-service] Cluster ID: DGHyaQEbRsiN8ViTsieyfA
+2026-10-21T13:23:54.302+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-11, groupId=matching-service] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-10-21T13:23:54.302+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-11, groupId=matching-service] Request joining group due to: consumer pro-actively leaving the group
+2026-10-21T13:23:54.302+11:00  INFO 44846 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-10-21T13:23:54.302+11:00  INFO 44846 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-10-21T13:23:54.302+11:00  INFO 44846 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-10-21T13:23:54.302+11:00  INFO 44846 --- [matching-service] [           main] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-10-21T13:23:54.303+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-matching-service-11 unregistered
+2026-10-21T13:23:54.304+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-1791587374.onApplicationStatusChanged-in-0.errors' has 1 subscriber(s).
+2026-10-21T13:23:54.304+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-1791587374.onApplicationStatusChanged-in-0.errors' has 0 subscriber(s).
+2026-10-21T13:23:54.304+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-1791587374.onApplicationStatusChanged-in-0.errors' has 1 subscriber(s).
+2026-10-21T13:23:54.304+11:00  INFO 44846 --- [matching-service] [           main] o.s.c.stream.binder.BinderErrorChannel   : Channel 'kafka-1791587374.onApplicationStatusChanged-in-0.errors' has 2 subscriber(s).
+2026-10-21T13:23:54.304+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
 	allow.auto.create.topics = true
 	auto.commit.interval.ms = 100
 	auto.include.jmx.reporter = true
@@ -1907,91 +1908,206 @@
 	ssl.truststore.type = JKS
 	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
 
-2026-09-18T20:49:49.842+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
-2026-09-18T20:49:49.844+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
-2026-09-18T20:49:49.844+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
-2026-09-18T20:49:49.844+10:00  INFO 69669 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1789728589844
-2026-09-18T20:49:49.844+10:00  INFO 69669 --- [matching-service] [           main] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] Subscribed to topic(s): application-status-changed
-2026-09-18T20:49:49.845+10:00  INFO 69669 --- [matching-service] [           main] s.i.k.i.KafkaMessageDrivenChannelAdapter : started org.springframework.integration.kafka.inbound.KafkaMessageDrivenChannelAdapter@cf822a6
-2026-09-18T20:49:49.849+10:00  INFO 69669 --- [matching-service] [container-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] Cluster ID: DGHyaQEbRsiN8ViTsieyfA
-2026-09-18T20:49:49.849+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
-2026-09-18T20:49:49.850+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] (Re-)joining group
-2026-09-18T20:49:49.853+10:00  INFO 69669 --- [matching-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8084 (http) with context path '/'
-2026-09-18T20:49:49.869+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] Request joining group due to: need to re-join with the given member-id: consumer-matching-service-10-7697ded3-28bb-4465-ab1e-42acc32a869c
-2026-09-18T20:49:49.869+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] (Re-)joining group
-2026-09-18T20:49:49.869+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] Request joining group due to: need to re-join with the given member-id: consumer-matching-service-12-01de52c1-4512-498d-ad3f-009fccfc5afc
-2026-09-18T20:49:49.869+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] (Re-)joining group
-2026-09-18T20:49:49.933+10:00  INFO 69669 --- [matching-service] [           main] c.c.matching.MatchingServiceApplication  : Started MatchingServiceApplication in 4.555 seconds (process running for 4.823)
-2026-09-18T20:49:50.768+10:00  INFO 69669 --- [matching-service] [nio-8084-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-09-18T20:49:50.771+10:00  INFO 69669 --- [matching-service] [nio-8084-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2026-09-18T20:49:50.799+10:00  INFO 69669 --- [matching-service] [nio-8084-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 26 ms
-2026-09-18T20:49:55.847+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-6, groupId=matching-service] Successfully joined group with generation Generation{generationId=20, memberId='consumer-matching-service-6-4bcf73ae-264a-44db-84b3-4bedc6b4890c', protocol='range'}
-2026-09-18T20:49:55.847+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] Successfully joined group with generation Generation{generationId=20, memberId='consumer-matching-service-10-7697ded3-28bb-4465-ab1e-42acc32a869c', protocol='range'}
-2026-09-18T20:49:55.847+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-8, groupId=matching-service] Successfully joined group with generation Generation{generationId=20, memberId='consumer-matching-service-8-930c268c-2ce9-43bc-87cd-bc39a45b6b67', protocol='range'}
-2026-09-18T20:49:55.847+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-4, groupId=matching-service] Successfully joined group with generation Generation{generationId=20, memberId='consumer-matching-service-4-7086d90a-0fbc-4e33-9629-b8879dab6c9e', protocol='range'}
-2026-09-18T20:49:55.847+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] Successfully joined group with generation Generation{generationId=20, memberId='consumer-matching-service-12-01de52c1-4512-498d-ad3f-009fccfc5afc', protocol='range'}
-2026-09-18T20:49:55.847+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-2, groupId=matching-service] Successfully joined group with generation Generation{generationId=20, memberId='consumer-matching-service-2-c9d0187d-cc4c-45a3-9a2c-3d3cc8ae8445', protocol='range'}
-2026-09-18T20:49:55.862+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-4, groupId=matching-service] Finished assignment for group at generation 20: {consumer-matching-service-6-4bcf73ae-264a-44db-84b3-4bedc6b4890c=Assignment(partitions=[job-closed-0]), consumer-matching-service-12-01de52c1-4512-498d-ad3f-009fccfc5afc=Assignment(partitions=[application-status-changed-0]), consumer-matching-service-10-7697ded3-28bb-4465-ab1e-42acc32a869c=Assignment(partitions=[application-submitted-0]), consumer-matching-service-4-7086d90a-0fbc-4e33-9629-b8879dab6c9e=Assignment(partitions=[job-updated-0]), consumer-matching-service-8-930c268c-2ce9-43bc-87cd-bc39a45b6b67=Assignment(partitions=[student-profile-updated-0]), consumer-matching-service-2-c9d0187d-cc4c-45a3-9a2c-3d3cc8ae8445=Assignment(partitions=[job-posted-0])}
-2026-09-18T20:49:55.868+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] Successfully synced group in generation Generation{generationId=20, memberId='consumer-matching-service-10-7697ded3-28bb-4465-ab1e-42acc32a869c', protocol='range'}
-2026-09-18T20:49:55.868+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-6, groupId=matching-service] Successfully synced group in generation Generation{generationId=20, memberId='consumer-matching-service-6-4bcf73ae-264a-44db-84b3-4bedc6b4890c', protocol='range'}
-2026-09-18T20:49:55.868+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-2, groupId=matching-service] Successfully synced group in generation Generation{generationId=20, memberId='consumer-matching-service-2-c9d0187d-cc4c-45a3-9a2c-3d3cc8ae8445', protocol='range'}
-2026-09-18T20:49:55.868+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] Successfully synced group in generation Generation{generationId=20, memberId='consumer-matching-service-12-01de52c1-4512-498d-ad3f-009fccfc5afc', protocol='range'}
-2026-09-18T20:49:55.868+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-4, groupId=matching-service] Successfully synced group in generation Generation{generationId=20, memberId='consumer-matching-service-4-7086d90a-0fbc-4e33-9629-b8879dab6c9e', protocol='range'}
-2026-09-18T20:49:55.868+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-8, groupId=matching-service] Successfully synced group in generation Generation{generationId=20, memberId='consumer-matching-service-8-930c268c-2ce9-43bc-87cd-bc39a45b6b67', protocol='range'}
-2026-09-18T20:49:55.868+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-6, groupId=matching-service] Notifying assignor about the new Assignment(partitions=[job-closed-0])
-2026-09-18T20:49:55.868+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] Notifying assignor about the new Assignment(partitions=[application-status-changed-0])
-2026-09-18T20:49:55.868+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] Notifying assignor about the new Assignment(partitions=[application-submitted-0])
-2026-09-18T20:49:55.868+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-2, groupId=matching-service] Notifying assignor about the new Assignment(partitions=[job-posted-0])
-2026-09-18T20:49:55.868+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-8, groupId=matching-service] Notifying assignor about the new Assignment(partitions=[student-profile-updated-0])
-2026-09-18T20:49:55.868+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-4, groupId=matching-service] Notifying assignor about the new Assignment(partitions=[job-updated-0])
-2026-09-18T20:49:55.871+10:00  INFO 69669 --- [matching-service] [container-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-matching-service-6, groupId=matching-service] Adding newly assigned partitions: job-closed-0
-2026-09-18T20:49:55.871+10:00  INFO 69669 --- [matching-service] [container-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] Adding newly assigned partitions: application-submitted-0
-2026-09-18T20:49:55.871+10:00  INFO 69669 --- [matching-service] [container-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-matching-service-8, groupId=matching-service] Adding newly assigned partitions: student-profile-updated-0
-2026-09-18T20:49:55.871+10:00  INFO 69669 --- [matching-service] [container-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] Adding newly assigned partitions: application-status-changed-0
-2026-09-18T20:49:55.871+10:00  INFO 69669 --- [matching-service] [container-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-matching-service-4, groupId=matching-service] Adding newly assigned partitions: job-updated-0
-2026-09-18T20:49:55.871+10:00  INFO 69669 --- [matching-service] [container-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-matching-service-2, groupId=matching-service] Adding newly assigned partitions: job-posted-0
-2026-09-18T20:49:55.878+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-4, groupId=matching-service] Found no committed offset for partition job-updated-0
-2026-09-18T20:49:55.879+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerUtils        : Setting offset for partition student-profile-updated-0 to the committed offset FetchPosition{offset=8, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}
-2026-09-18T20:49:55.880+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerUtils        : Setting offset for partition job-closed-0 to the committed offset FetchPosition{offset=2, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}
-2026-09-18T20:49:55.880+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerUtils        : Setting offset for partition application-status-changed-0 to the committed offset FetchPosition{offset=4, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}
-2026-09-18T20:49:55.880+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerUtils        : Setting offset for partition application-submitted-0 to the committed offset FetchPosition{offset=4, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}
-2026-09-18T20:49:55.880+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerUtils        : Setting offset for partition job-posted-0 to the committed offset FetchPosition{offset=10, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}
-2026-09-18T20:49:55.880+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.s.c.s.b.k.KafkaMessageChannelBinder$2  : matching-service: partitions assigned: [job-posted-0]
-2026-09-18T20:49:55.880+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.s.c.s.b.k.KafkaMessageChannelBinder$2  : matching-service: partitions assigned: [application-status-changed-0]
-2026-09-18T20:49:55.880+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.s.c.s.b.k.KafkaMessageChannelBinder$2  : matching-service: partitions assigned: [application-submitted-0]
-2026-09-18T20:49:55.880+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.s.c.s.b.k.KafkaMessageChannelBinder$2  : matching-service: partitions assigned: [student-profile-updated-0]
-2026-09-18T20:49:55.880+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.s.c.s.b.k.KafkaMessageChannelBinder$2  : matching-service: partitions assigned: [job-closed-0]
-2026-09-18T20:49:55.893+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-matching-service-4, groupId=matching-service] Resetting offset for partition job-updated-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}.
-2026-09-18T20:49:55.893+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.s.c.s.b.k.KafkaMessageChannelBinder$2  : matching-service: partitions assigned: [job-updated-0]
-2026-09-18T20:49:55.940+10:00  INFO 69669 --- [matching-service] [container-0-C-1] c.c.m.i.messaging.EventConsumers         : Received JobPosted for job 1
-2026-09-18T20:49:55.940+10:00  INFO 69669 --- [matching-service] [container-0-C-1] c.c.m.i.messaging.EventConsumers         : Received StudentProfileUpdated for student 1
-2026-09-18T20:49:55.960+10:00  INFO 69669 --- [matching-service] [container-0-C-1] c.c.m.i.messaging.EventConsumers         : Received JobPosted for job 2
-2026-09-18T20:49:58.326+10:00  INFO 69669 --- [matching-service] [nio-8084-exec-6] c.c.m.infrastructure.ai.JobCatalogTools  : Agent called tool: listOpenJobs
-2026-09-18T20:50:01.920+10:00  INFO 69669 --- [matching-service] [nio-8084-exec-6] c.c.matching.service.AiAgentService      : Matching agent replied for student 1
-2026-09-18T21:28:21.004+10:00  INFO 69669 --- [matching-service] [nio-8084-exec-5] c.c.m.infrastructure.ai.JobCatalogTools  : Agent called tool: listOpenJobs
-2026-09-18T21:28:26.356+10:00  INFO 69669 --- [matching-service] [nio-8084-exec-5] c.c.matching.service.AiAgentService      : Matching agent replied for student 1
-2026-09-18T21:58:26.181+10:00  INFO 69669 --- [matching-service] [atching-service] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-2, groupId=matching-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response. isDisconnected: false. Rediscovery will be attempted.
-2026-09-18T21:58:26.182+10:00  INFO 69669 --- [matching-service] [atching-service] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-6, groupId=matching-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response. isDisconnected: false. Rediscovery will be attempted.
-2026-09-18T21:58:26.184+10:00  INFO 69669 --- [matching-service] [atching-service] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-8, groupId=matching-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response. isDisconnected: false. Rediscovery will be attempted.
-2026-09-18T21:58:26.182+10:00  INFO 69669 --- [matching-service] [atching-service] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response. isDisconnected: false. Rediscovery will be attempted.
-2026-09-18T21:58:26.198+10:00  INFO 69669 --- [matching-service] [atching-service] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
-2026-09-18T21:58:26.198+10:00  INFO 69669 --- [matching-service] [atching-service] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-6, groupId=matching-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
-2026-09-18T21:58:26.198+10:00  INFO 69669 --- [matching-service] [atching-service] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-8, groupId=matching-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
-2026-09-18T21:58:26.185+10:00  INFO 69669 --- [matching-service] [atching-service] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response. isDisconnected: false. Rediscovery will be attempted.
-2026-09-18T21:58:26.199+10:00  INFO 69669 --- [matching-service] [atching-service] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
-2026-09-18T21:58:26.183+10:00  INFO 69669 --- [matching-service] [atching-service] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-4, groupId=matching-service] Group coordinator localhost:9092 (id: 2147483646 rack: null) is unavailable or invalid due to cause: session timed out without receiving a heartbeat response. isDisconnected: false. Rediscovery will be attempted.
-2026-09-18T21:58:26.199+10:00  INFO 69669 --- [matching-service] [atching-service] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-4, groupId=matching-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
-2026-09-18T21:58:26.199+10:00  INFO 69669 --- [matching-service] [atching-service] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-2, groupId=matching-service] Requesting disconnect from last known coordinator localhost:9092 (id: 2147483646 rack: null)
-2026-09-18T21:58:26.208+10:00  INFO 69669 --- [matching-service] [atching-service] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-matching-service-6, groupId=matching-service] Client requested disconnect from node 2147483646
-2026-09-18T21:58:26.208+10:00  INFO 69669 --- [matching-service] [atching-service] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-matching-service-8, groupId=matching-service] Client requested disconnect from node 2147483646
-2026-09-18T21:58:26.209+10:00  INFO 69669 --- [matching-service] [atching-service] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] Client requested disconnect from node 2147483646
-2026-09-18T21:58:26.210+10:00  INFO 69669 --- [matching-service] [atching-service] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-matching-service-2, groupId=matching-service] Client requested disconnect from node 2147483646
-2026-09-18T21:58:26.210+10:00  INFO 69669 --- [matching-service] [atching-service] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] Client requested disconnect from node 2147483646
-2026-09-18T21:58:26.211+10:00  INFO 69669 --- [matching-service] [atching-service] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-matching-service-4, groupId=matching-service] Client requested disconnect from node 2147483646
-2026-09-18T21:58:27.320+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-4, groupId=matching-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
-2026-09-18T21:58:27.320+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-6, groupId=matching-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
-2026-09-18T21:58:27.320+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-8, groupId=matching-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
-2026-09-18T21:58:27.320+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
-2026-09-18T21:58:27.320+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-2, groupId=matching-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
-2026-09-18T21:58:27.320+10:00  INFO 69669 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
-2026-09-18T21:58:43.264+10:00  WARN 69669 --- [matching-service] [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=9m24s547ms).
+2026-10-21T13:23:54.304+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-10-21T13:23:54.305+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.2
+2026-10-21T13:23:54.305+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 5e9866f43ab8e7e4
+2026-10-21T13:23:54.305+11:00  INFO 44846 --- [matching-service] [           main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1792549434305
+2026-10-21T13:23:54.306+11:00  INFO 44846 --- [matching-service] [           main] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] Subscribed to topic(s): application-status-changed
+2026-10-21T13:23:54.306+11:00  INFO 44846 --- [matching-service] [           main] s.i.k.i.KafkaMessageDrivenChannelAdapter : started org.springframework.integration.kafka.inbound.KafkaMessageDrivenChannelAdapter@74efc394
+2026-10-21T13:23:54.307+11:00  INFO 44846 --- [matching-service] [container-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] Cluster ID: DGHyaQEbRsiN8ViTsieyfA
+2026-10-21T13:23:54.308+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-10-21T13:23:54.308+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] (Re-)joining group
+2026-10-21T13:23:54.309+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] Request joining group due to: need to re-join with the given member-id: consumer-matching-service-12-79d61a8c-0e94-4973-9362-1ac9b549495e
+2026-10-21T13:23:54.309+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] (Re-)joining group
+2026-10-21T13:23:54.312+11:00  INFO 44846 --- [matching-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8084 (http) with context path '/'
+2026-10-21T13:23:54.342+11:00  INFO 44846 --- [matching-service] [           main] c.c.matching.MatchingServiceApplication  : Started MatchingServiceApplication in 6.787 seconds (process running for 7.14)
+2026-10-21T13:23:57.797+11:00  INFO 44846 --- [matching-service] [nio-8084-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-21T13:23:57.799+11:00  INFO 44846 --- [matching-service] [nio-8084-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-10-21T13:23:57.809+11:00  INFO 44846 --- [matching-service] [nio-8084-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2026-10-21T13:24:01.020+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] Successfully joined group with generation Generation{generationId=6, memberId='consumer-matching-service-12-79d61a8c-0e94-4973-9362-1ac9b549495e', protocol='range'}
+2026-10-21T13:24:01.020+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] Successfully joined group with generation Generation{generationId=6, memberId='consumer-matching-service-10-9d8c6249-20f6-4f4f-b618-35c70d5b59b1', protocol='range'}
+2026-10-21T13:24:01.021+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-2, groupId=matching-service] Successfully joined group with generation Generation{generationId=6, memberId='consumer-matching-service-2-b9e395bd-fe30-4c5f-8bdd-d1f9c3c7d8ae', protocol='range'}
+2026-10-21T13:24:01.020+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-4, groupId=matching-service] Successfully joined group with generation Generation{generationId=6, memberId='consumer-matching-service-4-24882e2e-792f-496a-9847-9f57b1e4fb1b', protocol='range'}
+2026-10-21T13:24:01.020+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-6, groupId=matching-service] Successfully joined group with generation Generation{generationId=6, memberId='consumer-matching-service-6-310d095c-434e-4142-bdbf-abc56cf4faf0', protocol='range'}
+2026-10-21T13:24:01.020+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-8, groupId=matching-service] Successfully joined group with generation Generation{generationId=6, memberId='consumer-matching-service-8-f7421df6-78b0-4df8-b0a1-7659b0e52871', protocol='range'}
+2026-10-21T13:24:01.162+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-2, groupId=matching-service] Finished assignment for group at generation 6: {consumer-matching-service-4-24882e2e-792f-496a-9847-9f57b1e4fb1b=Assignment(partitions=[job-updated-0]), consumer-matching-service-12-79d61a8c-0e94-4973-9362-1ac9b549495e=Assignment(partitions=[application-status-changed-0]), consumer-matching-service-10-9d8c6249-20f6-4f4f-b618-35c70d5b59b1=Assignment(partitions=[application-submitted-0]), consumer-matching-service-8-f7421df6-78b0-4df8-b0a1-7659b0e52871=Assignment(partitions=[student-profile-updated-0]), consumer-matching-service-6-310d095c-434e-4142-bdbf-abc56cf4faf0=Assignment(partitions=[job-closed-0]), consumer-matching-service-2-b9e395bd-fe30-4c5f-8bdd-d1f9c3c7d8ae=Assignment(partitions=[job-posted-0])}
+2026-10-21T13:24:01.417+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-4, groupId=matching-service] Successfully synced group in generation Generation{generationId=6, memberId='consumer-matching-service-4-24882e2e-792f-496a-9847-9f57b1e4fb1b', protocol='range'}
+2026-10-21T13:24:01.418+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-8, groupId=matching-service] Successfully synced group in generation Generation{generationId=6, memberId='consumer-matching-service-8-f7421df6-78b0-4df8-b0a1-7659b0e52871', protocol='range'}
+2026-10-21T13:24:01.418+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] Successfully synced group in generation Generation{generationId=6, memberId='consumer-matching-service-12-79d61a8c-0e94-4973-9362-1ac9b549495e', protocol='range'}
+2026-10-21T13:24:01.418+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] Successfully synced group in generation Generation{generationId=6, memberId='consumer-matching-service-10-9d8c6249-20f6-4f4f-b618-35c70d5b59b1', protocol='range'}
+2026-10-21T13:24:01.418+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-2, groupId=matching-service] Successfully synced group in generation Generation{generationId=6, memberId='consumer-matching-service-2-b9e395bd-fe30-4c5f-8bdd-d1f9c3c7d8ae', protocol='range'}
+2026-10-21T13:24:01.418+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-6, groupId=matching-service] Successfully synced group in generation Generation{generationId=6, memberId='consumer-matching-service-6-310d095c-434e-4142-bdbf-abc56cf4faf0', protocol='range'}
+2026-10-21T13:24:01.418+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-4, groupId=matching-service] Notifying assignor about the new Assignment(partitions=[job-updated-0])
+2026-10-21T13:24:01.418+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] Notifying assignor about the new Assignment(partitions=[application-status-changed-0])
+2026-10-21T13:24:01.418+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-2, groupId=matching-service] Notifying assignor about the new Assignment(partitions=[job-posted-0])
+2026-10-21T13:24:01.418+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] Notifying assignor about the new Assignment(partitions=[application-submitted-0])
+2026-10-21T13:24:01.418+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-8, groupId=matching-service] Notifying assignor about the new Assignment(partitions=[student-profile-updated-0])
+2026-10-21T13:24:01.418+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-6, groupId=matching-service] Notifying assignor about the new Assignment(partitions=[job-closed-0])
+2026-10-21T13:24:01.424+11:00  INFO 44846 --- [matching-service] [container-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] Adding newly assigned partitions: application-submitted-0
+2026-10-21T13:24:01.424+11:00  INFO 44846 --- [matching-service] [container-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] Adding newly assigned partitions: application-status-changed-0
+2026-10-21T13:24:01.424+11:00  INFO 44846 --- [matching-service] [container-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-matching-service-4, groupId=matching-service] Adding newly assigned partitions: job-updated-0
+2026-10-21T13:24:01.424+11:00  INFO 44846 --- [matching-service] [container-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-matching-service-6, groupId=matching-service] Adding newly assigned partitions: job-closed-0
+2026-10-21T13:24:01.424+11:00  INFO 44846 --- [matching-service] [container-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-matching-service-2, groupId=matching-service] Adding newly assigned partitions: job-posted-0
+2026-10-21T13:24:01.424+11:00  INFO 44846 --- [matching-service] [container-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-matching-service-8, groupId=matching-service] Adding newly assigned partitions: student-profile-updated-0
+2026-10-21T13:24:01.441+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-4, groupId=matching-service] Found no committed offset for partition job-updated-0
+2026-10-21T13:24:01.441+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] Found no committed offset for partition application-submitted-0
+2026-10-21T13:24:01.440+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-6, groupId=matching-service] Found no committed offset for partition job-closed-0
+2026-10-21T13:24:01.441+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] Found no committed offset for partition application-status-changed-0
+2026-10-21T13:24:01.443+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerUtils        : Setting offset for partition student-profile-updated-0 to the committed offset FetchPosition{offset=12, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=8}}
+2026-10-21T13:24:01.443+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerUtils        : Setting offset for partition job-posted-0 to the committed offset FetchPosition{offset=16, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=8}}
+2026-10-21T13:24:01.443+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.s.c.s.b.k.KafkaMessageChannelBinder$2  : matching-service: partitions assigned: [student-profile-updated-0]
+2026-10-21T13:24:01.443+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.s.c.s.b.k.KafkaMessageChannelBinder$2  : matching-service: partitions assigned: [job-posted-0]
+2026-10-21T13:24:01.466+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-matching-service-4, groupId=matching-service] Resetting offset for partition job-updated-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=8}}.
+2026-10-21T13:24:01.466+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] Resetting offset for partition application-submitted-0 to position FetchPosition{offset=4, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=8}}.
+2026-10-21T13:24:01.466+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-matching-service-6, groupId=matching-service] Resetting offset for partition job-closed-0 to position FetchPosition{offset=2, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=8}}.
+2026-10-21T13:24:01.466+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] Resetting offset for partition application-status-changed-0 to position FetchPosition{offset=4, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=8}}.
+2026-10-21T13:24:01.466+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.s.c.s.b.k.KafkaMessageChannelBinder$2  : matching-service: partitions assigned: [application-submitted-0]
+2026-10-21T13:24:01.466+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.s.c.s.b.k.KafkaMessageChannelBinder$2  : matching-service: partitions assigned: [job-updated-0]
+2026-10-21T13:24:01.466+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.s.c.s.b.k.KafkaMessageChannelBinder$2  : matching-service: partitions assigned: [job-closed-0]
+2026-10-21T13:24:01.466+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.s.c.s.b.k.KafkaMessageChannelBinder$2  : matching-service: partitions assigned: [application-status-changed-0]
+2026-10-21T13:24:08.645+11:00  INFO 44846 --- [matching-service] [ionShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-21T13:24:08.670+11:00  INFO 44846 --- [matching-service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-10-21T13:24:08.681+11:00  INFO 44846 --- [matching-service] [container-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-matching-service-2, groupId=matching-service] Revoke previously assigned partitions job-posted-0
+2026-10-21T13:24:08.683+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.s.c.s.b.k.KafkaMessageChannelBinder$2  : matching-service: partitions revoked: [job-posted-0]
+2026-10-21T13:24:08.684+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-2, groupId=matching-service] Member consumer-matching-service-2-b9e395bd-fe30-4c5f-8bdd-d1f9c3c7d8ae sending LeaveGroup request to coordinator localhost:9092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2026-10-21T13:24:08.684+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-2, groupId=matching-service] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-10-21T13:24:08.684+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-2, groupId=matching-service] Request joining group due to: consumer pro-actively leaving the group
+2026-10-21T13:24:08.684+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-matching-service-2, groupId=matching-service] Unsubscribed all topics or patterns and assigned partitions
+2026-10-21T13:24:08.685+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-2, groupId=matching-service] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-10-21T13:24:08.685+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-2, groupId=matching-service] Request joining group due to: consumer pro-actively leaving the group
+2026-10-21T13:24:09.023+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-matching-service-2, groupId=matching-service] Node 1 sent an invalid full fetch response with extraIds=(XDz4Lu82SKGZl_Y7th-5ow), response=()
+2026-10-21T13:24:09.070+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-10-21T13:24:09.070+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-10-21T13:24:09.071+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-10-21T13:24:09.071+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-10-21T13:24:09.072+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-matching-service-2 unregistered
+2026-10-21T13:24:09.072+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : matching-service: Consumer stopped
+2026-10-21T13:24:09.073+11:00  INFO 44846 --- [matching-service] [ionShutdownHook] s.i.k.i.KafkaMessageDrivenChannelAdapter : stopped org.springframework.integration.kafka.inbound.KafkaMessageDrivenChannelAdapter@d56d9f6
+2026-10-21T13:24:09.084+11:00  INFO 44846 --- [matching-service] [ionShutdownHook] o.s.c.stream.binder.BinderErrorChannel   : Channel 'matching-service.kafka-1791587374.onJobPosted-in-0.errors' has 1 subscriber(s).
+2026-10-21T13:24:09.084+11:00  INFO 44846 --- [matching-service] [ionShutdownHook] o.s.c.stream.binder.BinderErrorChannel   : Channel 'matching-service.kafka-1791587374.onJobPosted-in-0.errors' has 0 subscriber(s).
+2026-10-21T13:24:09.085+11:00  INFO 44846 --- [matching-service] [container-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-matching-service-4, groupId=matching-service] Revoke previously assigned partitions job-updated-0
+2026-10-21T13:24:09.085+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.s.c.s.b.k.KafkaMessageChannelBinder$2  : matching-service: partitions revoked: [job-updated-0]
+2026-10-21T13:24:09.085+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-4, groupId=matching-service] Member consumer-matching-service-4-24882e2e-792f-496a-9847-9f57b1e4fb1b sending LeaveGroup request to coordinator localhost:9092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2026-10-21T13:24:09.086+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-4, groupId=matching-service] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-10-21T13:24:09.086+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-4, groupId=matching-service] Request joining group due to: consumer pro-actively leaving the group
+2026-10-21T13:24:09.086+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-matching-service-4, groupId=matching-service] Unsubscribed all topics or patterns and assigned partitions
+2026-10-21T13:24:09.086+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-4, groupId=matching-service] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-10-21T13:24:09.086+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-4, groupId=matching-service] Request joining group due to: consumer pro-actively leaving the group
+2026-10-21T13:24:09.577+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-10-21T13:24:09.577+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-10-21T13:24:09.577+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-10-21T13:24:09.577+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-10-21T13:24:09.578+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-matching-service-4 unregistered
+2026-10-21T13:24:09.578+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : matching-service: Consumer stopped
+2026-10-21T13:24:09.578+11:00  INFO 44846 --- [matching-service] [ionShutdownHook] s.i.k.i.KafkaMessageDrivenChannelAdapter : stopped org.springframework.integration.kafka.inbound.KafkaMessageDrivenChannelAdapter@f64f47a
+2026-10-21T13:24:09.582+11:00  INFO 44846 --- [matching-service] [ionShutdownHook] o.s.c.stream.binder.BinderErrorChannel   : Channel 'matching-service.kafka-1791587374.onJobUpdated-in-0.errors' has 1 subscriber(s).
+2026-10-21T13:24:09.583+11:00  INFO 44846 --- [matching-service] [ionShutdownHook] o.s.c.stream.binder.BinderErrorChannel   : Channel 'matching-service.kafka-1791587374.onJobUpdated-in-0.errors' has 0 subscriber(s).
+2026-10-21T13:24:09.583+11:00  INFO 44846 --- [matching-service] [container-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-matching-service-6, groupId=matching-service] Revoke previously assigned partitions job-closed-0
+2026-10-21T13:24:09.583+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.s.c.s.b.k.KafkaMessageChannelBinder$2  : matching-service: partitions revoked: [job-closed-0]
+2026-10-21T13:24:09.583+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-6, groupId=matching-service] Member consumer-matching-service-6-310d095c-434e-4142-bdbf-abc56cf4faf0 sending LeaveGroup request to coordinator localhost:9092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2026-10-21T13:24:09.583+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-6, groupId=matching-service] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-10-21T13:24:09.583+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-6, groupId=matching-service] Request joining group due to: consumer pro-actively leaving the group
+2026-10-21T13:24:09.583+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-matching-service-6, groupId=matching-service] Unsubscribed all topics or patterns and assigned partitions
+2026-10-21T13:24:09.583+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-6, groupId=matching-service] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-10-21T13:24:09.583+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-6, groupId=matching-service] Request joining group due to: consumer pro-actively leaving the group
+2026-10-21T13:24:10.023+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-8, groupId=matching-service] Request joining group due to: group is already rebalancing
+2026-10-21T13:24:10.024+11:00  INFO 44846 --- [matching-service] [container-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-matching-service-8, groupId=matching-service] Revoke previously assigned partitions student-profile-updated-0
+2026-10-21T13:24:10.024+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] Request joining group due to: group is already rebalancing
+2026-10-21T13:24:10.024+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.s.c.s.b.k.KafkaMessageChannelBinder$2  : matching-service: partitions revoked: [student-profile-updated-0]
+2026-10-21T13:24:10.024+11:00  INFO 44846 --- [matching-service] [container-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] Revoke previously assigned partitions application-submitted-0
+2026-10-21T13:24:10.024+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.s.c.s.b.k.KafkaMessageChannelBinder$2  : matching-service: partitions revoked: [application-submitted-0]
+2026-10-21T13:24:10.024+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-8, groupId=matching-service] (Re-)joining group
+2026-10-21T13:24:10.024+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] (Re-)joining group
+2026-10-21T13:24:10.024+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] Request joining group due to: group is already rebalancing
+2026-10-21T13:24:10.024+11:00  INFO 44846 --- [matching-service] [container-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] Revoke previously assigned partitions application-status-changed-0
+2026-10-21T13:24:10.024+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.s.c.s.b.k.KafkaMessageChannelBinder$2  : matching-service: partitions revoked: [application-status-changed-0]
+2026-10-21T13:24:10.024+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] (Re-)joining group
+2026-10-21T13:24:10.026+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] Successfully joined group with generation Generation{generationId=7, memberId='consumer-matching-service-12-79d61a8c-0e94-4973-9362-1ac9b549495e', protocol='range'}
+2026-10-21T13:24:10.026+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] Successfully joined group with generation Generation{generationId=7, memberId='consumer-matching-service-10-9d8c6249-20f6-4f4f-b618-35c70d5b59b1', protocol='range'}
+2026-10-21T13:24:10.026+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-8, groupId=matching-service] Successfully joined group with generation Generation{generationId=7, memberId='consumer-matching-service-8-f7421df6-78b0-4df8-b0a1-7659b0e52871', protocol='range'}
+2026-10-21T13:24:10.121+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-10-21T13:24:10.121+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-10-21T13:24:10.121+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-10-21T13:24:10.121+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-10-21T13:24:10.122+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-matching-service-6 unregistered
+2026-10-21T13:24:10.122+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : matching-service: Consumer stopped
+2026-10-21T13:24:10.123+11:00  INFO 44846 --- [matching-service] [ionShutdownHook] s.i.k.i.KafkaMessageDrivenChannelAdapter : stopped org.springframework.integration.kafka.inbound.KafkaMessageDrivenChannelAdapter@1cc9b564
+2026-10-21T13:24:10.123+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] Finished assignment for group at generation 7: {consumer-matching-service-12-79d61a8c-0e94-4973-9362-1ac9b549495e=Assignment(partitions=[application-status-changed-0]), consumer-matching-service-10-9d8c6249-20f6-4f4f-b618-35c70d5b59b1=Assignment(partitions=[application-submitted-0]), consumer-matching-service-8-f7421df6-78b0-4df8-b0a1-7659b0e52871=Assignment(partitions=[student-profile-updated-0])}
+2026-10-21T13:24:10.126+11:00  INFO 44846 --- [matching-service] [ionShutdownHook] o.s.c.stream.binder.BinderErrorChannel   : Channel 'matching-service.kafka-1791587374.onJobClosed-in-0.errors' has 1 subscriber(s).
+2026-10-21T13:24:10.127+11:00  INFO 44846 --- [matching-service] [ionShutdownHook] o.s.c.stream.binder.BinderErrorChannel   : Channel 'matching-service.kafka-1791587374.onJobClosed-in-0.errors' has 0 subscriber(s).
+2026-10-21T13:24:10.127+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-8, groupId=matching-service] Member consumer-matching-service-8-f7421df6-78b0-4df8-b0a1-7659b0e52871 sending LeaveGroup request to coordinator localhost:9092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2026-10-21T13:24:10.127+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-8, groupId=matching-service] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-10-21T13:24:10.127+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-8, groupId=matching-service] Request joining group due to: consumer pro-actively leaving the group
+2026-10-21T13:24:10.127+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-matching-service-8, groupId=matching-service] Unsubscribed all topics or patterns and assigned partitions
+2026-10-21T13:24:10.127+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-8, groupId=matching-service] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-10-21T13:24:10.127+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-8, groupId=matching-service] Request joining group due to: consumer pro-actively leaving the group
+2026-10-21T13:24:10.130+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] Successfully synced group in generation Generation{generationId=7, memberId='consumer-matching-service-12-79d61a8c-0e94-4973-9362-1ac9b549495e', protocol='range'}
+2026-10-21T13:24:10.130+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] Notifying assignor about the new Assignment(partitions=[application-status-changed-0])
+2026-10-21T13:24:10.130+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] Successfully synced group in generation Generation{generationId=7, memberId='consumer-matching-service-10-9d8c6249-20f6-4f4f-b618-35c70d5b59b1', protocol='range'}
+2026-10-21T13:24:10.130+11:00  INFO 44846 --- [matching-service] [container-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] Adding newly assigned partitions: application-status-changed-0
+2026-10-21T13:24:10.130+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-8, groupId=matching-service] Generation data was cleared by heartbeat thread to Generation{generationId=-1, memberId='', protocol='null'} and state is now UNJOINED before receiving SyncGroup response, marking this rebalance as failed and retry
+2026-10-21T13:24:10.130+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] Notifying assignor about the new Assignment(partitions=[application-submitted-0])
+2026-10-21T13:24:10.131+11:00  INFO 44846 --- [matching-service] [container-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] Adding newly assigned partitions: application-submitted-0
+2026-10-21T13:24:10.133+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] Found no committed offset for partition application-status-changed-0
+2026-10-21T13:24:10.134+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] Found no committed offset for partition application-submitted-0
+2026-10-21T13:24:10.134+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-10-21T13:24:10.134+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-10-21T13:24:10.134+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-10-21T13:24:10.134+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-10-21T13:24:10.135+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-matching-service-8 unregistered
+2026-10-21T13:24:10.135+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : matching-service: Consumer stopped
+2026-10-21T13:24:10.135+11:00  INFO 44846 --- [matching-service] [ionShutdownHook] s.i.k.i.KafkaMessageDrivenChannelAdapter : stopped org.springframework.integration.kafka.inbound.KafkaMessageDrivenChannelAdapter@51f714d1
+2026-10-21T13:24:10.135+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] Resetting offset for partition application-status-changed-0 to position FetchPosition{offset=4, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=8}}.
+2026-10-21T13:24:10.135+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] Resetting offset for partition application-submitted-0 to position FetchPosition{offset=4, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=8}}.
+2026-10-21T13:24:10.135+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.s.c.s.b.k.KafkaMessageChannelBinder$2  : matching-service: partitions assigned: [application-status-changed-0]
+2026-10-21T13:24:10.135+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.s.c.s.b.k.KafkaMessageChannelBinder$2  : matching-service: partitions assigned: [application-submitted-0]
+2026-10-21T13:24:10.139+11:00  INFO 44846 --- [matching-service] [ionShutdownHook] o.s.c.stream.binder.BinderErrorChannel   : Channel 'matching-service.kafka-1791587374.onStudentProfileUpdated-in-0.errors' has 1 subscriber(s).
+2026-10-21T13:24:10.139+11:00  INFO 44846 --- [matching-service] [ionShutdownHook] o.s.c.stream.binder.BinderErrorChannel   : Channel 'matching-service.kafka-1791587374.onStudentProfileUpdated-in-0.errors' has 0 subscriber(s).
+2026-10-21T13:24:10.139+11:00  INFO 44846 --- [matching-service] [container-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] Revoke previously assigned partitions application-submitted-0
+2026-10-21T13:24:10.139+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.s.c.s.b.k.KafkaMessageChannelBinder$2  : matching-service: partitions revoked: [application-submitted-0]
+2026-10-21T13:24:10.139+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] Member consumer-matching-service-10-9d8c6249-20f6-4f4f-b618-35c70d5b59b1 sending LeaveGroup request to coordinator localhost:9092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2026-10-21T13:24:10.139+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-10-21T13:24:10.139+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] Request joining group due to: consumer pro-actively leaving the group
+2026-10-21T13:24:10.139+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] Unsubscribed all topics or patterns and assigned partitions
+2026-10-21T13:24:10.140+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-10-21T13:24:10.140+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-10, groupId=matching-service] Request joining group due to: consumer pro-actively leaving the group
+2026-10-21T13:24:10.641+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-10-21T13:24:10.641+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-10-21T13:24:10.641+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-10-21T13:24:10.641+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-10-21T13:24:10.645+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-matching-service-10 unregistered
+2026-10-21T13:24:10.645+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : matching-service: Consumer stopped
+2026-10-21T13:24:10.645+11:00  INFO 44846 --- [matching-service] [ionShutdownHook] s.i.k.i.KafkaMessageDrivenChannelAdapter : stopped org.springframework.integration.kafka.inbound.KafkaMessageDrivenChannelAdapter@2c226db0
+2026-10-21T13:24:10.649+11:00  INFO 44846 --- [matching-service] [ionShutdownHook] o.s.c.stream.binder.BinderErrorChannel   : Channel 'matching-service.kafka-1791587374.onApplicationSubmitted-in-0.errors' has 1 subscriber(s).
+2026-10-21T13:24:10.649+11:00  INFO 44846 --- [matching-service] [ionShutdownHook] o.s.c.stream.binder.BinderErrorChannel   : Channel 'matching-service.kafka-1791587374.onApplicationSubmitted-in-0.errors' has 0 subscriber(s).
+2026-10-21T13:24:10.649+11:00  INFO 44846 --- [matching-service] [container-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] Revoke previously assigned partitions application-status-changed-0
+2026-10-21T13:24:10.649+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.s.c.s.b.k.KafkaMessageChannelBinder$2  : matching-service: partitions revoked: [application-status-changed-0]
+2026-10-21T13:24:10.649+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] Member consumer-matching-service-12-79d61a8c-0e94-4973-9362-1ac9b549495e sending LeaveGroup request to coordinator localhost:9092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2026-10-21T13:24:10.649+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-10-21T13:24:10.649+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] Request joining group due to: consumer pro-actively leaving the group
+2026-10-21T13:24:10.649+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] Unsubscribed all topics or patterns and assigned partitions
+2026-10-21T13:24:10.649+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-10-21T13:24:10.649+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] Request joining group due to: consumer pro-actively leaving the group
+2026-10-21T13:24:10.766+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.kafka.clients.FetchSessionHandler    : [Consumer clientId=consumer-matching-service-12, groupId=matching-service] Node 1 sent an invalid full fetch response with extraIds=(J1Q4GJTCT4uOvFeqT-GSeg), response=()
+2026-10-21T13:24:10.767+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-10-21T13:24:10.767+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-10-21T13:24:10.767+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-10-21T13:24:10.767+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-10-21T13:24:10.768+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-matching-service-12 unregistered
+2026-10-21T13:24:10.768+11:00  INFO 44846 --- [matching-service] [container-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : matching-service: Consumer stopped
+2026-10-21T13:24:10.769+11:00  INFO 44846 --- [matching-service] [ionShutdownHook] s.i.k.i.KafkaMessageDrivenChannelAdapter : stopped org.springframework.integration.kafka.inbound.KafkaMessageDrivenChannelAdapter@74efc394
+2026-10-21T13:24:10.774+11:00  INFO 44846 --- [matching-service] [ionShutdownHook] o.s.c.stream.binder.BinderErrorChannel   : Channel 'matching-service.kafka-1791587374.onApplicationStatusChanged-in-0.errors' has 1 subscriber(s).
+2026-10-21T13:24:10.775+11:00  INFO 44846 --- [matching-service] [ionShutdownHook] o.s.c.stream.binder.BinderErrorChannel   : Channel 'matching-service.kafka-1791587374.onApplicationStatusChanged-in-0.errors' has 0 subscriber(s).
+2026-10-21T13:24:10.776+11:00  INFO 44846 --- [matching-service] [ionShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2026-10-21T13:24:10.776+11:00  INFO 44846 --- [matching-service] [ionShutdownHook] o.s.i.channel.PublishSubscribeChannel    : Channel 'matching-service.errorChannel' has 0 subscriber(s).
+2026-10-21T13:24:10.776+11:00  INFO 44846 --- [matching-service] [ionShutdownHook] o.s.i.endpoint.EventDrivenConsumer       : stopped bean '_org.springframework.integration.errorLogger'
+2026-10-21T13:24:10.779+11:00  INFO 44846 --- [matching-service] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-21T13:24:10.781+11:00  INFO 44846 --- [matching-service] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-10-21T13:24:10.783+11:00  INFO 44846 --- [matching-service] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+[ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:3.5.16:run (default-cli) on project matching-service: Process terminated with exit code: 143 -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

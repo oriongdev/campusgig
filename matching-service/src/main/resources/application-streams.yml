@@ -1,45 +1,38 @@
-# Kafka Streams profile: run matching-service with -Dspring.profiles.active=streams
-# (or SPRING_PROFILES_ACTIVE=streams) once the Kafka Streams dependency is approved.
+# Kafka Streams profile.
+#
+# Turns on the Kafka Streams version of the real-time analytics:
+#   ./run.sh --streams          (starts everything with the analytics on Kafka Streams)
+#   SPRING_PROFILES_ACTIVE=streams mvn -pl matching-service spring-boot:run
+#
+# The six message consumers keep using the normal Kafka binder. The two KStream functions below
+# are picked up by the Kafka Streams binder automatically because of their KStream parameter
+# type, so there is no "binders" section here (declaring one stops the service from starting).
 spring:
   cloud:
     function:
       definition: onJobPosted;onJobUpdated;onJobClosed;onStudentProfileUpdated;onApplicationSubmitted;onApplicationStatusChanged;jobPostedStream;applicationSubmittedStream
     stream:
-      binders:
-        kafka:
-          type: kafka
-        kstream:
-          type: kstream
       bindings:
-        onJobPosted-in-0:
-          binder: kafka
-        onJobUpdated-in-0:
-          binder: kafka
-        onJobClosed-in-0:
-          binder: kafka
-        onStudentProfileUpdated-in-0:
-          binder: kafka
-        onApplicationSubmitted-in-0:
-          binder: kafka
-        onApplicationStatusChanged-in-0:
-          binder: kafka
         jobPostedStream-in-0:
           destination: job-posted
-          binder: kstream
         applicationSubmittedStream-in-0:
           destination: application-submitted
-          binder: kstream
       kafka:
         streams:
           binder:
-            applicationId: campusgig-analytics
             brokers: localhost:9092
             configuration:
+              # Write each updated count to its state store within a second, so the UI looks live.
               commit.interval.ms: 1000
           bindings:
             jobPostedStream-in-0:
               consumer:
+                applicationId: campusgig-jobs-per-category
                 valueSerde: com.campusgig.matching.infrastructure.streams.JobPostedSerde
+                # The very first run starts from new events instead of replaying old ones.
+                startOffset: latest
             applicationSubmittedStream-in-0:
               consumer:
+                applicationId: campusgig-applications-per-job
                 valueSerde: com.campusgig.matching.infrastructure.streams.ApplicationSubmittedSerde
+                startOffset: latest

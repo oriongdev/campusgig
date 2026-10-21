@@ -1,7 +1,7 @@
 {
   "info": {
     "name": "CampusGig demo",
-    "description": "Run in order against a fresh start of all four services.",
+    "description": "Run in order against a fresh start of all four services (./run.sh). Requests 1-19 and 23-25 need no API key. Requests 21 and 22 call the AI agents and return 503 unless matching-service was started with GEMINI_API_KEY set. ./demo.sh runs the same flow from the command line and checks every response.",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "variable": [
@@ -533,6 +533,77 @@
         "body": {
           "mode": "raw",
           "raw": "{\n  \"title\": \"barista needed\",\n  \"category\": \"hospitality\",\n  \"location\": \"Wollongong\",\n  \"pay\": \"28.50 HOURLY\",\n  \"description\": \"make coffee weekends must be fast\"\n}"
+        }
+      }
+    },
+    {
+      "name": "23. Register a second student",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{userUrl}}/api/students",
+          "host": [
+            "{{userUrl}}"
+          ],
+          "path": [
+            "api",
+            "students"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Priya Shah\",\n  \"email\": \"priya@uowmail.edu.au\",\n  \"skills\": [\n    \"java\",\n    \"tutoring\"\n  ],\n  \"availability\": \"EVENINGS\"\n}"
+        }
+      }
+    },
+    {
+      "name": "24. Second student applies for job 1",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{appUrl}}/api/applications",
+          "host": [
+            "{{appUrl}}"
+          ],
+          "path": [
+            "api",
+            "applications"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"jobId\": 1,\n  \"studentId\": 2,\n  \"coverMessage\": \"I can work Sundays.\"\n}"
+        }
+      }
+    },
+    {
+      "name": "25. Withdraw that application",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{appUrl}}/api/applications/2/withdraw",
+          "host": [
+            "{{appUrl}}"
+          ],
+          "path": [
+            "api",
+            "applications",
+            "2",
+            "withdraw"
+          ]
         }
       }
     }

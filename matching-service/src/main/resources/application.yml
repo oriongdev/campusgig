@@ -50,3 +50,9 @@ campusgig:
     api-key: ${GEMINI_API_KEY:}
     # Alternatives: gemini-3.5-flash (stronger), gemini-flash-latest (always newest)
     model: gemini-3.1-flash-lite
+    # Give up on a single LLM call after this long. The matching agent then falls back to
+    # the rule-based matcher.
+    timeout-seconds: 60
+    # How many times the reviewer agent may send the job ad assistant's rewrite back for
+    # another go. 0 switches the review off (one LLM call instead of two or three).
+    ad-review-rounds: 1

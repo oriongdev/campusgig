@@ -15,6 +15,11 @@ spring:
   h2:
     console:
       enabled: true
+  http:
+    client:
+      # The REST call to job-service must fail fast instead of hanging if that service is down.
+      connect-timeout: 2s
+      read-timeout: 5s
   cloud:
     stream:
       kafka:

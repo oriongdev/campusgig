@@ -23,7 +23,7 @@ import java.util.concurrent.atomic.AtomicLong;
  *
  * <p>This is the always-on version. When the application runs with the "streams" profile,
  * the same two queries are also computed by Kafka Streams (see infrastructure.streams),
- * and the controller prefers those results.
+ * and {@link AnalyticsQueryService} prefers those results.
  */
 @Service
 public class AnalyticsService {

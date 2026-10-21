@@ -8,6 +8,7 @@ import com.campusgig.application.infrastructure.client.JobServiceClient;
 import com.campusgig.application.infrastructure.messaging.JobApplicationEventPublisher;
 import com.campusgig.application.infrastructure.persistence.JobApplicationRepository;
 import org.junit.jupiter.api.Test;
+import org.mockito.ArgumentCaptor;
 
 import java.util.Optional;
 
@@ -69,5 +70,28 @@ class ApplicationServiceTest {
 
         assertEquals(ApplicationStatus.SHORTLISTED, application.getStatus());
         verify(events).publish(any(ApplicationStatusChanged.class));
+    }
+
+    @Test
+    void withdrawingPublishesAStatusChangeToWithdrawn() {
+        JobApplication application = new JobApplication(1L, 2L, "Keen to help");
+        when(applications.findById(7L)).thenReturn(Optional.of(application));
+
+        service.withdraw(7L);
+
+        assertEquals(ApplicationStatus.WITHDRAWN, application.getStatus());
+        ArgumentCaptor<ApplicationStatusChanged> published = ArgumentCaptor.forClass(ApplicationStatusChanged.class);
+        verify(events).publish(published.capture());
+        assertEquals("SUBMITTED", published.getValue().oldStatus());
+        assertEquals("WITHDRAWN", published.getValue().newStatus());
+    }
+
+    @Test
+    void anAcceptedApplicationCanNoLongerBeWithdrawn() {
+        JobApplication application = new JobApplication(1L, 2L, "Keen to help");
+        application.moveTo(ApplicationStatus.ACCEPTED);
+        when(applications.findById(7L)).thenReturn(Optional.of(application));
+
+        assertThrows(IllegalStateException.class, () -> service.withdraw(7L));
     }
 }

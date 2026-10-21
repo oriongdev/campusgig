@@ -52,8 +52,9 @@ public class MatchingService {
     }
 
     /**
-     * Rule-based recommendations for now.
-     * TODO (in progress): replace with the LangChain4j job matching agent.
+     * Rule-based recommendations: every open job whose text mentions one of the student's skills.
+     * This is the instant, deterministic baseline. The AI matching agent (see AiAgentService)
+     * gives richer answers and falls back to this when the LLM is unavailable.
      */
     @Transactional(readOnly = true)
     public List<JobRecommendation> recommendJobs(Long studentId) {

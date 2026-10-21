@@ -140,7 +140,7 @@
 
       <div class="card">
         <h2>Recommended for you</h2>
-        <p class="hint">Built by matching-service from Kafka events. Rule-based for now; the AI agent replaces this.</p>
+        <p class="hint">Built by matching-service from Kafka events. Rule-based matches are instant. The AI agent looks up the open jobs itself and weighs your skills and availability.</p>
         <div class="row">
           <button class="btn ghost sm fixed" id="loadRecs">Rule-based</button>
           <button class="btn teal sm fixed" id="loadAiRecs">Ask the AI agent</button>
@@ -715,12 +715,16 @@ async function loadAiRecommendations() {
   if (!state.studentId) return toast("Pick a student first", "error");
   $("recs").innerHTML = '<div class="empty">Asking the AI agent. This takes a few seconds...</div>';
   try {
-    const recs = await api(API.match, "/api/ai/students/" + state.studentId + "/recommendations");
-    $("recs").innerHTML = recs.length ? recs.map(function (r) {
-      return '<div class="item"><h3>' + esc(r.title) + ' <span class="pill teal">AI</span></h3>' +
+    const result = await api(API.match, "/api/ai/students/" + state.studentId + "/recommendations");
+    const recs = result.recommendations || [];
+    const fromAgent = result.source === "AI_AGENT";
+    const note = result.note ? '<div class="empty">' + esc(result.note) + "</div>" : "";
+    $("recs").innerHTML = note + (recs.length ? recs.map(function (r) {
+      return '<div class="item"><h3>' + esc(r.title) +
+        (fromAgent ? ' <span class="pill teal">AI</span>' : ' <span class="pill grey">rule-based</span>') + "</h3>" +
         '<div class="meta">job #' + r.jobId + "</div>" +
         '<div class="body"><span class="score">' + Math.round((r.score || 0) * 100) + "% match</span> &middot; " + esc(r.reason) + "</div></div>";
-    }).join("") : '<div class="empty">The agent found no good matches.</div>';
+    }).join("") : '<div class="empty">' + (fromAgent ? "The agent found no good matches." : "No rule-based matches either.") + "</div>");
   } catch (e) {
     $("recs").innerHTML = '<div class="empty">' + esc(e.message) + "</div>";
   }
@@ -742,8 +746,15 @@ async function improveJobAd() {
     $("jTitle").value = review.improvedTitle || $("jTitle").value;
     $("jDesc").value = review.improvedDescription || $("jDesc").value;
     const tips = (review.tips || []).map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("");
+    const notes = (review.reviewNotes || []).map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("");
+    const listStyle = 'style="margin:8px 0 0 18px;padding:0;font-size:13.5px"';
+    const reviewLine = notes
+      ? '<div class="body" style="margin-top:10px"><b>Reviewer agent:</b> found the problems below' +
+        (review.revisions ? " and the assistant rewrote the ad to fix them." : ". Check the ad for them before posting.") +
+        "</div><ul " + listStyle + ">" + notes + "</ul>"
+      : '<div class="body" style="margin-top:10px"><b>Reviewer agent:</b> no problems found.</div>';
     $("adTips").innerHTML = '<div class="item" style="margin-top:12px"><h3>What the assistant changed <span class="pill teal">AI</span></h3>' +
-      (tips ? '<ul style="margin:8px 0 0 18px;padding:0;font-size:13.5px">' + tips + "</ul>" : '<div class="body">Ad rewritten above.</div>') + "</div>";
+      (tips ? "<ul " + listStyle + ">" + tips + "</ul>" : '<div class="body">Ad rewritten above.</div>') + reviewLine + "</div>";
     toast("Job ad improved. Check the title and description before posting.", "ok");
   } catch (e) {
     $("adTips").innerHTML = '<div class="item" style="margin-top:12px"><div class="body">' + esc(e.message) + "</div></div>";

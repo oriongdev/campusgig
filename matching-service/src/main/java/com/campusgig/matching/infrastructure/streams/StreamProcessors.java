@@ -3,13 +3,12 @@ package com.campusgig.matching.infrastructure.streams;
 import com.campusgig.matching.domain.event.ApplicationSubmitted;
 import com.campusgig.matching.domain.event.JobPosted;
 import org.apache.kafka.common.serialization.Serdes;
-import org.apache.kafka.common.utils.Bytes;
 import org.apache.kafka.streams.kstream.Grouped;
+import org.apache.kafka.streams.kstream.KGroupedStream;
 import org.apache.kafka.streams.kstream.KStream;
 import org.apache.kafka.streams.kstream.Materialized;
 import org.apache.kafka.streams.kstream.TimeWindows;
-import org.apache.kafka.streams.state.KeyValueStore;
-import org.apache.kafka.streams.state.WindowStore;
+import org.apache.kafka.streams.state.Stores;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -23,19 +22,24 @@ import java.util.function.Consumer;
  * <p>In SQL-like terms the topologies compute:
  *
  * <pre>
- * -- jobs per category
+ * -- Query 1: jobs per category (requirement 11)
  * SELECT category, COUNT(*) FROM job_posted GROUP BY category;
  *
- * -- applications per job
+ * -- Query 2a: applications per job (requirement 12)
  * SELECT jobId, COUNT(*) FROM application_submitted GROUP BY jobId;
  *
- * -- trending jobs (tumbling 15 minute window)
+ * -- Query 2b: trending jobs (requirement 12), tumbling 15 minute window
  * SELECT jobId, COUNT(*) FROM application_submitted
  * WINDOW TUMBLING (SIZE 15 MINUTES) GROUP BY jobId;
  * </pre>
  *
- * Results are kept in state stores and read back through interactive queries,
- * see {@link StreamAnalyticsService}.
+ * <p>Each result is a KTable materialised in a state store and read back through interactive
+ * queries, see {@link StreamAnalyticsService}.
+ *
+ * <p>The stores are in-memory with changelog topics switched off. Every service in this prototype
+ * keeps its data in an in-memory H2 database that starts empty, so the counts start empty with
+ * them and always describe the current run. A production system would use the default persistent
+ * RocksDB stores with changelogs so the counts survive a restart.
  */
 @Configuration
 @Profile("streams")
@@ -46,35 +50,48 @@ public class StreamProcessors {
     public static final String TRENDING_JOBS_STORE = "trending-jobs-store";
     public static final Duration TRENDING_WINDOW = Duration.ofMinutes(15);
 
+    /** How long closed windows stay queryable. */
+    private static final Duration WINDOW_RETENTION = Duration.ofHours(1);
+
     @Bean
     public Consumer<KStream<String, JobPosted>> jobPostedStream() {
-        return stream -> stream
-                .filter((key, event) -> event != null && event.category() != null)
-                .groupBy((key, event) -> event.category(),
-                        Grouped.with(Serdes.String(), new JobPostedSerde()))
-                .count(Materialized.<String, Long, KeyValueStore<Bytes, byte[]>>as(JOBS_PER_CATEGORY_STORE)
-                        .withKeySerde(Serdes.String())
-                        .withValueSerde(Serdes.Long()));
+        return StreamProcessors::countJobsPerCategory;
     }
 
     @Bean
     public Consumer<KStream<String, ApplicationSubmitted>> applicationSubmittedStream() {
-        return stream -> {
-            KStream<String, ApplicationSubmitted> byJob = stream
-                    .filter((key, event) -> event != null && event.jobId() != null);
+        return StreamProcessors::countApplicationsPerJob;
+    }
 
-            byJob.groupBy((key, event) -> String.valueOf(event.jobId()),
-                            Grouped.with(Serdes.String(), new ApplicationSubmittedSerde()))
-                    .count(Materialized.<String, Long, KeyValueStore<Bytes, byte[]>>as(APPLICATIONS_PER_JOB_STORE)
-                            .withKeySerde(Serdes.String())
-                            .withValueSerde(Serdes.Long()));
+    /** Query 1. Events arrive without a key, so they are re-keyed by category before counting. */
+    static void countJobsPerCategory(KStream<String, JobPosted> jobPosted) {
+        jobPosted
+                .filter((key, event) -> event != null && event.category() != null)
+                .groupBy((key, event) -> event.category(),
+                        Grouped.with("jobs-by-category", Serdes.String(), new JobPostedSerde()))
+                .count(Materialized.<String, Long>as(Stores.inMemoryKeyValueStore(JOBS_PER_CATEGORY_STORE))
+                        .withKeySerde(Serdes.String())
+                        .withValueSerde(Serdes.Long())
+                        .withLoggingDisabled());
+    }
 
-            byJob.groupBy((key, event) -> String.valueOf(event.jobId()),
-                            Grouped.with(Serdes.String(), new ApplicationSubmittedSerde()))
-                    .windowedBy(TimeWindows.ofSizeWithNoGrace(TRENDING_WINDOW))
-                    .count(Materialized.<String, Long, WindowStore<Bytes, byte[]>>as(TRENDING_JOBS_STORE)
-                            .withKeySerde(Serdes.String())
-                            .withValueSerde(Serdes.Long()));
-        };
+    /** Queries 2a and 2b. Both aggregations share one stream that is re-keyed by job id. */
+    static void countApplicationsPerJob(KStream<String, ApplicationSubmitted> applicationSubmitted) {
+        KGroupedStream<String, ApplicationSubmitted> byJob = applicationSubmitted
+                .filter((key, event) -> event != null && event.jobId() != null)
+                .groupBy((key, event) -> String.valueOf(event.jobId()),
+                        Grouped.with("applications-by-job", Serdes.String(), new ApplicationSubmittedSerde()));
+
+        byJob.count(Materialized.<String, Long>as(Stores.inMemoryKeyValueStore(APPLICATIONS_PER_JOB_STORE))
+                .withKeySerde(Serdes.String())
+                .withValueSerde(Serdes.Long())
+                .withLoggingDisabled());
+
+        byJob.windowedBy(TimeWindows.ofSizeWithNoGrace(TRENDING_WINDOW))
+                .count(Materialized.<String, Long>as(
+                                Stores.inMemoryWindowStore(TRENDING_JOBS_STORE, WINDOW_RETENTION, TRENDING_WINDOW, false))
+                        .withKeySerde(Serdes.String())
+                        .withValueSerde(Serdes.Long())
+                        .withLoggingDisabled());
     }
 }

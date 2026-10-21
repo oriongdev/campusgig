@@ -1,0 +1,67 @@
+digraph "uc07" {
+  graph [rankdir=TB, fontname="Inter", fontsize=13, labelloc=t, labeljust=l, label=<<b>UC7  Student applies for a job</b>>, pad=0.25, nodesep=0.35, ranksep=0.42, splines=spline, bgcolor="white", newrank=true, fontcolor="#1B2B45"];
+  node [fontname="Inter", fontcolor="#1B2B45", penwidth=1.1];
+  edge [fontname="Inter", fontsize=9.5, color="#1B2B45", fontcolor="#33425C", arrowsize=0.7, penwidth=1.0];
+  subgraph cluster_student {
+    label=<<b>Student</b>>; labelloc=t; labeljust=c; fontsize=11.5; fontname="Inter"; fontcolor="#1B2B45";
+    style="filled"; fillcolor="#EEF4FF"; color="#B8C4D6"; margin=14;
+    student__top [shape=point, style=invis, width=0, height=0, label=""];
+    student__bot [shape=point, style=invis, width=0, height=0, label=""];
+    s [shape=circle, style=filled, fillcolor="#1B2B45", color="#1B2B45", label="", width=0.24, height=0.24, fixedsize=true];
+    write [shape=box, style="filled,rounded", fillcolor="#FFFFFF", color="#1B2B45", label="Write a cover message\nand apply", fontsize=10.5, margin="0.14,0.08"];
+    see [shape=box, style="filled,rounded", fillcolor="#FFFFFF", color="#1B2B45", label="See it under My\napplications", fontsize=10.5, margin="0.14,0.08"];
+    e [shape=doublecircle, style=filled, fillcolor="#1B2B45", color="#1B2B45", label="", width=0.2, height=0.2, fixedsize=true];
+  }
+  subgraph cluster_app {
+    label=<<b>application-service</b>>; labelloc=t; labeljust=c; fontsize=11.5; fontname="Inter"; fontcolor="#1B2B45";
+    style="filled"; fillcolor="#F5F7FA"; color="#B8C4D6"; margin=14;
+    app__top [shape=point, style=invis, width=0, height=0, label=""];
+    app__bot [shape=point, style=invis, width=0, height=0, label=""];
+    ask [shape=box, style="filled,rounded", fillcolor="#FFFFFF", color="#1B2B45", label="Ask job-service for the\njob (REST GET)", fontsize=10.5, margin="0.14,0.08"];
+    exists [shape=diamond, style=filled, fillcolor="#FFFFFF", color="#1B2B45", label="Job exists?", fontsize=10, margin="0.16,0.10"];
+    open [shape=diamond, style=filled, fillcolor="#FFFFFF", color="#1B2B45", label="Job is open?", fontsize=10, margin="0.16,0.10"];
+    dup [shape=diamond, style=filled, fillcolor="#FFFFFF", color="#1B2B45", label="Already applied?", fontsize=10, margin="0.16,0.10"];
+    err [shape=box, style="filled,rounded", fillcolor="#FFFFFF", color="#1B2B45", label="Return the error with\nits reason", fontsize=10.5, margin="0.14,0.08"];
+    ex [shape=doublecircle, style=filled, fillcolor="#1B2B45", color="#1B2B45", label="", width=0.2, height=0.2, fixedsize=true];
+    save [shape=box, style="filled,rounded", fillcolor="#FFFFFF", color="#1B2B45", label="Save the application as\nSUBMITTED", fontsize=10.5, margin="0.14,0.08"];
+    pub [shape=cds, style=filled, fillcolor="#DFF7F2", color="#0E7490", label="Publish\nApplicationSubmitted", fontsize=10.5, margin="0.18,0.08"];
+    ok [shape=box, style="filled,rounded", fillcolor="#FFFFFF", color="#1B2B45", label="Return 201 with the\napplication", fontsize=10.5, margin="0.14,0.08"];
+  }
+  subgraph cluster_job {
+    label=<<b>job-service</b>>; labelloc=t; labeljust=c; fontsize=11.5; fontname="Inter"; fontcolor="#1B2B45";
+    style="filled"; fillcolor="#F5F7FA"; color="#B8C4D6"; margin=14;
+    job__top [shape=point, style=invis, width=0, height=0, label=""];
+    job__bot [shape=point, style=invis, width=0, height=0, label=""];
+    lookup [shape=box, style="filled,rounded", fillcolor="#FFFFFF", color="#1B2B45", label="Look up the job by id", fontsize=10.5, margin="0.14,0.08"];
+  }
+  subgraph cluster_match {
+    label=<<b>matching-service</b>>; labelloc=t; labeljust=c; fontsize=11.5; fontname="Inter"; fontcolor="#1B2B45";
+    style="filled"; fillcolor="#F0FAF7"; color="#B8C4D6"; margin=14;
+    match__top [shape=point, style=invis, width=0, height=0, label=""];
+    match__bot [shape=point, style=invis, width=0, height=0, label=""];
+    count [shape=box, style="filled,rounded,dashed", fillcolor="#DFF7F2", color="#0E7490", label="Count the application\nfor the live analytics", fontsize=10.5, margin="0.14,0.08"];
+  }
+  { rank=min; student__top; app__top; job__top; match__top; }
+  { rank=max; student__bot; app__bot; job__bot; match__bot; }
+  student__top -> app__top -> job__top -> match__top [style=invis];
+  student__top -> student__bot [style=invis, weight=0];
+  app__top -> app__bot [style=invis, weight=0];
+  job__top -> job__bot [style=invis, weight=0];
+  match__top -> match__bot [style=invis, weight=0];
+  s -> write;
+  write -> ask;
+  ask -> lookup;
+  lookup -> exists;
+  exists -> err [label=" no: 404 "];
+  exists -> open [label=" yes "];
+  open -> err [label=" no: 409 "];
+  open -> dup [label=" yes "];
+  dup -> err [label=" yes: 409 "];
+  dup -> save [label=" no "];
+  save -> pub;
+  pub -> ok;
+  ok -> see;
+  see -> e;
+  err -> ex;
+  pub -> count [label=" Kafka ", style=dashed, color="#0E7490", arrowhead=open];
+}

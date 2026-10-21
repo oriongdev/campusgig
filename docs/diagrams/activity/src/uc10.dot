@@ -1,0 +1,51 @@
+digraph "uc10" {
+  graph [rankdir=TB, fontname="Inter", fontsize=13, labelloc=t, labeljust=l, label=<<b>UC10  Student is notified when their application status changes</b>>, pad=0.25, nodesep=0.35, ranksep=0.42, splines=spline, bgcolor="white", newrank=true, fontcolor="#1B2B45"];
+  node [fontname="Inter", fontcolor="#1B2B45", penwidth=1.1];
+  edge [fontname="Inter", fontsize=9.5, color="#1B2B45", fontcolor="#33425C", arrowsize=0.7, penwidth=1.0];
+  subgraph cluster_app {
+    label=<<b>application-service</b>>; labelloc=t; labeljust=c; fontsize=11.5; fontname="Inter"; fontcolor="#1B2B45";
+    style="filled"; fillcolor="#F5F7FA"; color="#B8C4D6"; margin=14;
+    app__top [shape=point, style=invis, width=0, height=0, label=""];
+    app__bot [shape=point, style=invis, width=0, height=0, label=""];
+    s [shape=circle, style=filled, fillcolor="#1B2B45", color="#1B2B45", label="", width=0.24, height=0.24, fixedsize=true];
+    pub [shape=cds, style=filled, fillcolor="#DFF7F2", color="#0E7490", label="Publish\nApplicationStatusChanged", fontsize=10.5, margin="0.18,0.08"];
+  }
+  subgraph cluster_match {
+    label=<<b>matching-service</b>>; labelloc=t; labeljust=c; fontsize=11.5; fontname="Inter"; fontcolor="#1B2B45";
+    style="filled"; fillcolor="#F0FAF7"; color="#B8C4D6"; margin=14;
+    match__top [shape=point, style=invis, width=0, height=0, label=""];
+    match__bot [shape=point, style=invis, width=0, height=0, label=""];
+    recv [shape=box, style="filled,rounded,dashed", fillcolor="#DFF7F2", color="#0E7490", label="Receive the event from\nKafka", fontsize=10.5, margin="0.14,0.08"];
+    known [shape=diamond, style=filled, fillcolor="#FFFFFF", color="#1B2B45", label="Is the job in the\nlocal\nJobSnapshots?", fontsize=10, margin="0.16,0.10"];
+    title [shape=box, style="filled,rounded", fillcolor="#FFFFFF", color="#1B2B45", label="Use the job's title", fontsize=10.5, margin="0.14,0.08"];
+    number [shape=box, style="filled,rounded", fillcolor="#FFFFFF", color="#1B2B45", label="Use the job's number\ninstead", fontsize=10.5, margin="0.14,0.08"];
+    save [shape=box, style="filled,rounded", fillcolor="#FFFFFF", color="#1B2B45", label="Save a Notification for\nthe student", fontsize=10.5, margin="0.14,0.08"];
+    list [shape=box, style="filled,rounded", fillcolor="#FFFFFF", color="#1B2B45", label="Return the student's\nnotifications, newest\nfirst", fontsize=10.5, margin="0.14,0.08"];
+  }
+  subgraph cluster_student {
+    label=<<b>Student</b>>; labelloc=t; labeljust=c; fontsize=11.5; fontname="Inter"; fontcolor="#1B2B45";
+    style="filled"; fillcolor="#EEF4FF"; color="#B8C4D6"; margin=14;
+    student__top [shape=point, style=invis, width=0, height=0, label=""];
+    student__bot [shape=point, style=invis, width=0, height=0, label=""];
+    open [shape=box, style="filled,rounded", fillcolor="#FFFFFF", color="#1B2B45", label="Open Notifications", fontsize=10.5, margin="0.14,0.08"];
+    read [shape=box, style="filled,rounded", fillcolor="#FFFFFF", color="#1B2B45", label="Read: your application\nfor the job is now\nACCEPTED", fontsize=10.5, margin="0.14,0.08"];
+    e [shape=doublecircle, style=filled, fillcolor="#1B2B45", color="#1B2B45", label="", width=0.2, height=0.2, fixedsize=true];
+  }
+  { rank=min; app__top; match__top; student__top; }
+  { rank=max; app__bot; match__bot; student__bot; }
+  app__top -> match__top -> student__top [style=invis];
+  app__top -> app__bot [style=invis, weight=0];
+  match__top -> match__bot [style=invis, weight=0];
+  student__top -> student__bot [style=invis, weight=0];
+  s -> pub;
+  pub -> recv [label=" Kafka ", style=dashed, color="#0E7490", arrowhead=open];
+  recv -> known;
+  known -> title [label=" yes "];
+  known -> number [label=" no "];
+  title -> save;
+  number -> save;
+  save -> open;
+  open -> list;
+  list -> read;
+  read -> e;
+}
